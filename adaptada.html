@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Física Adaptada | MoveMentes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --verde: #1a5c3a; --azul: #1e3a5f; --naranja: #f39c12; }
+        body { font-family: Arial, sans-serif; line-height: 1.7; color: #333; background: #f5f5f5; }
+        .hero { background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white; padding: 60px 20px; text-align: center; }
+        h1 { font-size: 2.5em; margin-bottom: 15px; }
+        h2 { color: var(--azul); font-size: 2em; margin: 40px 0 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        section { background: white; margin: 30px 0; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .cta { background: var(--naranja); color: white; padding: 15px 40px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; }
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .benefit { background: #f5f5f5; padding: 20px; border-radius: 10px; border-left: 5px solid var(--naranja); }
+        .guarantee { background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+        footer { background: var(--azul); color: white; padding: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>💪 Actividad Física Adaptada</h1>
+            <p style="font-size: 1.2em; margin: 15px 0;">Salud, movilidad y bienestar para mayores 60+</p>
+            <button class="cta" onclick="document.getElementById('contacto').scrollIntoView();">Solicita Sesión Gratis</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>Especialmente para Mayores</h2>
+            <p style="font-size: 1.1em;">Programas diseñados específicamente para personas de 60+ años. Mejora de movilidad, fuerza funcional, equilibrio y coordinación. Prevención de caídas.</p>
+        </section>
+
+        <section>
+            <h2>Beneficios Comprobados</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <strong>🚶 Movilidad</strong>
+                    <p>Mayor flexibilidad y rango de movimiento.</p>
+                </div>
+                <div class="benefit">
+                    <strong>💪 Fuerza</strong>
+                    <p>Fortalecimiento de músculos y huesos.</p>
+                </div>
+                <div class="benefit">
+                    <strong>⚖️ Equilibrio</strong>
+                    <p>Mejor equilibrio = prevención de caídas.</p>
+                </div>
+                <div class="benefit">
+                    <strong>❤️ Salud Cardiovascular</strong>
+                    <p>Mejora de la circulación y corazón.</p>
+                </div>
+                <div class="benefit">
+                    <strong>🧠 Cognición</strong>
+                    <p>Estimulación mental y concentración.</p>
+                </div>
+                <div class="benefit">
+                    <strong>😊 Bienestar</strong>
+                    <p>Energía, ánimo positivo y socialización.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Información</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>Público:</strong> 60+ años</p>
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>Frecuencia:</strong> 2-3 sesiones por semana</p>
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>Duración:</strong> 45-60 minutos</p>
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>Precio:</strong> €75-110/mes (con 10% descuento: €67-99)</p>
+        </section>
+
+        <section class="guarantee">
+            <h2 style="color: white;">🛡️ Garantía de Satisfacción</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;">Si no notas mejoría en 8 semanas, <strong>reembolso total sin condiciones</strong>.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contactar</h2>
+            <form onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Tu nombre" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="email" placeholder="Tu email" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="tel" placeholder="Tu teléfono" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                <button type="submit" class="cta" style="width: 100%;">Solicitar</button>
+            </form>
+        </section>
+
+        <section style="text-align: center; background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white;">
+            <p style="font-size: 1.1em;"><strong>📞 678 345 540</strong></p>
+            <p style="margin-top: 20px;"><a href="index.html" style="color: var(--naranja); text-decoration: none; font-weight: 700;">← Volver</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MoveMentes | Salud para Mayores</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('✅ Solicitud enviada.\nRespuesta garantizada en 24 horas.\nCódigo: MOVEMENTES10');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
