@@ -33,12 +33,20 @@ body {
 
 /* NAV */
 nav.site-nav {
-    background: var(--white);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 10px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
     z-index: 200;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+nav.site-nav.is-scrolled {
+    background: rgba(255,255,255,0.72);
+    box-shadow: 0 8px 28px rgba(20,49,74,0.1);
 }
 
 nav.site-nav .container {
@@ -238,6 +246,54 @@ a.card:hover { transform: translateY(-6px) rotate(-0.3deg); box-shadow: 0 18px 4
 .contact-form textarea { min-height: 110px; resize: vertical; }
 .contact-form button { width: 100%; }
 .contact-form-note { font-size: 0.85em; opacity: 0.75; margin-top: -6px; margin-bottom: 16px; }
+
+/* ENTRY POPUP */
+.popup-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(22,50,79,0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+.popup-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.popup-card {
+    position: relative;
+    max-width: 420px; width: 100%;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    padding: 40px 32px 32px;
+    text-align: center;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.3);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s ease;
+}
+.popup-overlay.is-open .popup-card { transform: translateY(0) scale(1); }
+
+.popup-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--bg-light); border: none; cursor: pointer;
+    font-size: 1.2em; color: var(--text-dark); line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.popup-close:hover { background: var(--border); transform: rotate(90deg); }
+
+.popup-logo { width: 150px; margin: 0 auto 14px; display: block; }
+.popup-tag {
+    display: inline-block; background: linear-gradient(135deg, var(--orange), var(--gold));
+    color: var(--navy); font-weight: 800; padding: 8px 18px; border-radius: 20px;
+    font-size: 0.85em; margin-bottom: 14px; letter-spacing: 0.3px;
+}
+.popup-card h3 { color: var(--navy); font-size: 1.4em; margin-bottom: 10px; }
+.popup-card p { color: var(--text-light); font-size: 0.97em; line-height: 1.6; margin-bottom: 22px; }
 
 /* WHATSAPP FLOATING BUTTON */
 .wa-float {
