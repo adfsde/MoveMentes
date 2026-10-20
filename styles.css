@@ -55,25 +55,34 @@ h1, h2, h3, h4, .btn, nav.site-nav .nav-links a { font-family: 'Nunito', 'Segoe 
     transition: width 0.1s linear;
 }
 
-/* NAV — floating island */
+/* NAV — floating island
+   Note: backdrop-filter lives on .nav-glass-bg, NOT on nav.site-nav itself,
+   because backdrop-filter/filter on an ancestor creates a containing block
+   for position:fixed descendants (breaks the full-screen mobile menu). */
 nav.site-nav {
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    padding: 14px 0;
-    box-shadow: 0 2px 16px rgba(20,49,74,0.05);
     position: sticky;
     top: 0;
     z-index: 200;
+    padding: 14px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 0;
     margin: 0;
 }
 
-nav.site-nav.is-scrolled {
+.nav-glass-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 2px 16px rgba(20,49,74,0.05);
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav.site-nav.is-scrolled { padding: 8px 0; }
+nav.site-nav.is-scrolled .nav-glass-bg {
     background: rgba(255,255,255,0.75);
     box-shadow: 0 10px 34px rgba(20,49,74,0.14);
-    padding: 8px 0;
     margin: 10px auto 0;
     max-width: 1120px;
     border-radius: 50px;
