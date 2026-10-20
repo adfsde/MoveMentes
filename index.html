@@ -1,756 +1,234 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="gl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoveMentes | Educación Integral en Movimiento</title>
-    <meta name="description" content="MoveMentes: actividad extraescolar integral que cuida cuerpo, mente y emociones. Psicomotricidad, multideporte, gestión emocional. Galicia. Ángel García Lema - Graduado en Educación Infantil.">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO1234567"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-DEMO1234567');
-    </script>
-
-    <script>
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '123456789123456');
-        fbq('track', 'PageView');
-    </script>
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary-dark: #1A3A52;
-            --primary-light: #2C3E50;
-            --accent-green: #2D5A3D;
-            --accent-gold: #D4AF37;
-            --text-dark: #2C3E50;
-            --text-light: #6B7280;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            --border: #E5E7EB;
-            --success: #10B981;
-        }
-
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--white); }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-green) 100%);
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 3.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
-        .hero-subtitle { font-size: 1.2em; margin-bottom: 30px; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; }
-        .hero-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 25px; font-size: 0.95em; margin-bottom: 30px; backdrop-filter: blur(10px); }
-
-        .cta-primary {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            padding: 18px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            margin: 15px 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1.05em;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            letter-spacing: 0.5px;
-        }
-
-        .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); }
-
-        .cta-secondary {
-            display: inline-block;
-            background: transparent;
-            color: var(--white);
-            padding: 18px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 15px 10px;
-            border: 2px solid var(--white);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1.05em;
-        }
-
-        .cta-secondary:hover { background: var(--white); color: var(--primary-dark); }
-
-        nav {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            display: inline-block;
-            padding: 12px 20px;
-            color: var(--text-dark);
-            text-decoration: none;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 600;
-            font-size: 0.95em;
-        }
-
-        nav a:hover { background: var(--bg-light); color: var(--accent-green); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        section {
-            padding: 80px 40px;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
-
-        h2 {
-            color: var(--primary-dark);
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        h3 { color: var(--primary-dark); font-weight: 700; margin-bottom: 15px; }
-
-        .section-subtitle {
-            font-size: 1.1em;
-            color: var(--text-light);
-            margin-bottom: 50px;
-            max-width: 700px;
-        }
-
-        /* QUÉ ES MOVEMENTES */
-        .definition-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .definition-card {
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.05) 0%, rgba(26, 58, 82, 0.05) 100%);
-            padding: 40px;
-            border-radius: 12px;
-            border-left: 5px solid var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .definition-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .definition-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 0.95em;
-        }
-
-        /* PILARES */
-        .pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .pillar {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .pillar-icon { font-size: 3em; margin-bottom: 15px; }
-
-        .pillar h4 {
-            color: var(--primary-dark);
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .pillar p {
-            color: var(--text-light);
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        /* ESPECIALIDADES */
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 60px 0;
-        }
-
-        .specialty-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-        }
-
-        .specialty-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border-color: var(--accent-gold);
-        }
-
-        .specialty-badge {
-            display: inline-block;
-            background: var(--accent-green);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .specialty-card h4 {
-            color: var(--primary-dark);
-            font-size: 1.2em;
-            margin-bottom: 12px;
-        }
-
-        .specialty-card p {
-            color: var(--text-light);
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .specialty-ages {
-            color: var(--accent-gold);
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        /* TRAYECTORIA */
-        .trajectory {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .trajectory-item {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        .trajectory-item:last-child {
-            border-bottom: none;
-        }
-
-        .trajectory-icon {
-            font-size: 1.5em;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .trajectory-content h5 {
-            color: var(--primary-dark);
-            font-size: 1em;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .trajectory-content p {
-            color: var(--text-light);
-            font-size: 0.9em;
-        }
-
-        /* POR QUÉ MOVEMENTES */
-        .value-props {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin: 60px 0;
-        }
-
-        .value-prop {
-            padding: 30px;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .value-prop-icon { font-size: 2.5em; margin-bottom: 15px; }
-
-        .value-prop h4 {
-            color: var(--primary-dark);
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .value-prop p {
-            color: var(--text-light);
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-
-        /* CAMPAMENTOS */
-        .camp-section {
-            background: linear-gradient(135deg, var(--accent-green) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 60px 40px;
-            border-radius: 15px;
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .camp-section h3 {
-            color: var(--white);
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .camp-section p {
-            font-size: 1.05em;
-            opacity: 0.95;
-            margin-bottom: 20px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* SOBRE ÁNGEL */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin: 60px 0;
-        }
-
-        .about-image {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .about-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .about-content ul {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .about-content li {
-            padding: 10px 0;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .about-content li::before {
-            content: '✓ ';
-            color: var(--accent-gold);
-            font-weight: 700;
-            margin-right: 10px;
-        }
-
-        .certifications {
-            background: var(--bg-light);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid var(--accent-gold);
-        }
-
-        .certifications strong {
-            color: var(--primary-dark);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* CONTACT SECTION */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-green) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 40px;
-        }
-
-        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .contact-item {
-            text-align: center;
-        }
-
-        .contact-label {
-            font-size: 0.9em;
-            opacity: 0.8;
-            margin-bottom: 8px;
-        }
-
-        .contact-value {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: var(--accent-gold);
-        }
-
-        footer {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 10px 0;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2em; }
-            h2 { font-size: 1.8em; }
-            section { padding: 50px 20px; }
-            .about-grid { grid-template-columns: 1fr; gap: 30px; }
-            .specialties-grid, .definition-cards, .pillars { grid-template-columns: 1fr; }
-            .cta-primary, .cta-secondary { display: block; width: 100%; margin: 10px 0; }
-            nav a { display: block; margin: 5px 0; }
-            .trajectory-item { grid-template-columns: 1fr; }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        section { animation: fadeInUp 0.6s ease-out; }
-    </style>
+    <title>MoveMentes | Corpo activo, mente feliz — Actividade extraescolar integral en Galicia</title>
+    <meta name="description" content="MoveMentes: actividade extraescolar integral que coida o corpo, a mente e as emocións. Psicomotricidade, multideporte, xestión emocional. CEIP Ponte de Xubia, Galicia. Ángel García Lema, Graduado en Educación Infantil.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="hero">
+    <nav class="site-nav">
         <div class="container">
-            <div class="hero-tag">Educación Integral en Movimiento</div>
-            <h1>MoveMentes</h1>
-            <p class="hero-subtitle">Una actividad extraescolar que cuida el cuerpo, la mente y las emociones. Psicomotricidad, multideporte y gestión emocional para niños, jóvenes y adultos en Galicia.</p>
-            <div>
-                <a href="#actividades" class="cta-primary">Descubre Nuestras Actividades</a>
-                <a href="#contacto" class="cta-secondary">Solicita Información →</a>
-            </div>
-        </div>
-    </div>
-
-    <nav>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-            <img src="logo-clean.png" alt="MoveMentes" style="height: 40px; width: auto;">
-            <div>
-                <a href="#que-es">¿Qué es?</a>
+            <a href="index.html" class="logo-link"><img src="logo-clean.png" alt="MoveMentes" class="nav-logo"></a>
+            <div class="nav-links">
+                <a href="#que-es">¿Qué é?</a>
                 <a href="#actividades">Actividades</a>
+                <a href="colegios.html">Colegios e ANPA</a>
                 <a href="#angel">Ángel García Lema</a>
-                <a href="#por-que">Por Qué Elegir</a>
-                <a href="#contacto" style="font-weight: 700; color: var(--accent-gold);">Contacto</a>
+                <a href="#contacto" class="nav-cta">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <section id="que-es">
+    <div class="hero">
         <div class="container">
-            <h2>¿Qué es MoveMentes?</h2>
-            <p class="section-subtitle">Una propuesta educativa integral dirigida a Educación Infantil, Primaria y ESO</p>
+            <div class="hero-tag">Corpo activo, mente feliz</div>
+            <h1>MoveMentes</h1>
+            <p class="hero-subtitle">Unha actividade extraescolar integral que coida o corpo, a mente e as emocións. Psicomotricidade, multideporte e xestión emocional para nenos, nenas e mozos en Galicia.</p>
+            <div>
+                <a href="#portas-abertas" class="btn btn-primary">Xornada de Portas Abertas</a>
+                <a href="https://wa.me/34678345540" class="btn btn-outline" target="_blank" rel="noopener">Pide información →</a>
+            </div>
+        </div>
+    </div>
 
-            <div class="definition-cards">
-                <div class="definition-card">
-                    <h3>Psicomotricidad y Movimiento Libre</h3>
-                    <p>Dirigida a niños de edades tempranas mediante juegos y dinámicas diseñadas para favorecer la coordinación, equilibrio y expresión corporal.</p>
+    <section class="page-section" id="portas-abertas">
+        <div class="container">
+            <div class="event-banner">
+                <div class="event-tag">📅 Evento próximo</div>
+                <h2>Xornada de Portas Abertas</h2>
+                <p style="font-size: 1.1em; max-width: 600px; margin: 0 auto 20px;">Vén coñecer MoveMentes no CEIP Ponte de Xubia. Aprende, xoga, medra e disfruta — psicomotricidade, fútbol sala e baloncesto nunha soa xornada.</p>
+                <p style="font-weight: 700; margin-bottom: 24px;">📍 CEIP Ponte de Xubia &nbsp;·&nbsp; Data: ao rematar as obras do pavillón</p>
+                <a href="https://wa.me/34678345540?text=Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20a%20Xornada%20de%20Portas%20Abertas" class="btn btn-whatsapp" target="_blank" rel="noopener">Apúntate por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="que-es">
+        <div class="container">
+            <h2 class="section-title">¿Qué é MoveMentes?</h2>
+            <p class="section-subtitle">Unha proposta educativa integral dirixida a Educación Infantil, Primaria e ESO, actualmente en marcha os martes de 16:00 a 18:00 no CEIP Ponte de Xubia.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Psicomotricidade e Movemento Libre</h3>
+                    <p>Dirixida a idades temperás mediante xogos e dinámicas deseñadas para favorecer a coordinación, o equilibrio e a expresión corporal.</p>
                 </div>
-                <div class="definition-card">
+                <div class="card">
                     <h3>Iniciación Multideportiva</h3>
-                    <p>Orientada a alumnado de mayor edad, con un acercamiento lúdico a distintas disciplinas deportivas, promoviendo cooperación y trabajo en equipo.</p>
+                    <p>Orientada ao alumnado de maior idade, cun achegamento lúdico a distintas disciplinas deportivas, promovendo a cooperación e o traballo en equipo.</p>
                 </div>
-                <div class="definition-card">
-                    <h3>Gestión Emocional</h3>
-                    <p>Técnicas de relajación y ejercicios adaptados a cada etapa evolutiva para fomentar el reconocimiento, expresión y regulación de emociones.</p>
+                <div class="card">
+                    <h3>Xestión Emocional</h3>
+                    <p>Técnicas de relaxación e exercicios adaptados a cada etapa evolutiva para fomentar o recoñecemento, expresión e regulación das emocións.</p>
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin-top: 60px; margin-bottom: 40px;">Los 3 Pilares de MoveMentes</h3>
+            <h3 style="text-align: center; margin-top: 56px; margin-bottom: 30px; color: var(--navy);">Os 3 piares de MoveMentes</h3>
             <div class="pillars">
                 <div class="pillar">
-                    <div class="pillar-icon">🧠</div>
-                    <h4>Cuerpo</h4>
-                    <p>Desarrollo físico integral: coordinación, equilibrio, fuerza y confianza motriz.</p>
+                    <div class="pillar-icon" style="background: var(--green);">🏃</div>
+                    <h4>Corpo</h4>
+                    <p>Desenvolvemento físico integral: coordinación, equilibrio, forza e confianza motriz.</p>
                 </div>
                 <div class="pillar">
-                    <div class="pillar-icon">💭</div>
+                    <div class="pillar-icon" style="background: var(--lightblue);">💭</div>
                     <h4>Mente</h4>
-                    <p>Estimulación cognitiva, creatividad, concentración y aprendizaje colaborativo.</p>
+                    <p>Estimulación cognitiva, creatividade, concentración e aprendizaxe colaborativa.</p>
                 </div>
                 <div class="pillar">
-                    <div class="pillar-icon">❤️</div>
-                    <h4>Emociones</h4>
-                    <p>Reconocimiento, regulación y expresión saludable de emociones.</p>
+                    <div class="pillar-icon" style="background: var(--purple);">❤️</div>
+                    <h4>Emocións</h4>
+                    <p>Recoñecemento, regulación e expresión saudable das emocións.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="actividades" style="background: var(--bg-light);">
+    <section class="page-section alt" id="actividades">
         <div class="container">
-            <h2>Nuestras Actividades y Especialidades</h2>
-            <p class="section-subtitle">Programas adaptados a todas las edades y necesidades</p>
+            <h2 class="section-title">Actividades e Especialidades</h2>
+            <p class="section-subtitle">Programas adaptados a todas as idades.</p>
 
-            <div class="specialties-grid">
-                <a href="psicomotricidad.html" class="specialty-card" style="text-decoration: none; display: block;">
-                    <span class="specialty-badge">Edades Tempranas</span>
-                    <h4>Psicomotricidad</h4>
-                    <p>Desarrollo integral de la motricidad gruesa y fina. Expresión corporal, coordinación y equilibrio en un ambiente lúdico y seguro.</p>
-                    <div class="specialty-ages">3-6 años</div>
+            <div class="card-grid">
+                <a href="psicomotricidad.html" class="card">
+                    <span class="badge c-green">Idades temperás</span>
+                    <h4>Psicomotricidade</h4>
+                    <p>Desenvolvemento integral da motricidade grosa e fina, coordinación e equilibrio.</p>
                 </a>
 
-                <div class="specialty-card">
-                    <span class="specialty-badge">Primaria</span>
-                    <h4>Iniciación Multideportiva</h4>
-                    <p>Acercamiento a diferentes deportes: fútbol, baloncesto, voleibol y más. Fomenta el trabajo en equipo y el espíritu deportivo.</p>
-                    <div class="specialty-ages">6-12 años</div>
-                </div>
-
-                <a href="tenis.html" class="specialty-card" style="text-decoration: none; display: block;">
-                    <span class="specialty-badge">Especialidad</span>
-                    <h4>Tenis de Mesa</h4>
-                    <p>Iniciación y mejora técnica con más de 20 años de experiencia. Precisión, reflejos y concentración.</p>
-                    <div class="specialty-ages">7+ años</div>
+                <a href="futbol.html" class="card">
+                    <span class="badge c-orange">Especialidade</span>
+                    <h4>Fútbol Sala</h4>
+                    <p>Técnica, táctica e espírito de equipo. Máis de 20 anos de experiencia.</p>
                 </a>
 
-                <a href="futbol.html" class="specialty-card" style="text-decoration: none; display: block;">
-                    <span class="specialty-badge">Especialidad</span>
-                    <h4>Fútbol</h4>
-                    <p>Técnica, táctica y espíritu de equipo. Más de 20 años de experiencia en diferentes niveles.</p>
-                    <div class="specialty-ages">6+ años</div>
-                </a>
-
-                <a href="baloncesto.html" class="specialty-card" style="text-decoration: none; display: block;">
-                    <span class="specialty-badge">Especialidad</span>
+                <a href="baloncesto.html" class="card">
+                    <span class="badge c-orange">Especialidade</span>
                     <h4>Baloncesto</h4>
-                    <p>Técnica, toma de decisiones y trabajo en equipo mientras se disfruta del juego.</p>
-                    <div class="specialty-ages">6+ años</div>
+                    <p>Técnica, toma de decisións e traballo en equipo mentres se disfruta do xogo.</p>
                 </a>
 
-                <a href="adaptada.html" class="specialty-card" style="text-decoration: none; display: block;">
-                    <span class="specialty-badge">Educación Especial</span>
-                    <h4>Deporte y Psicomotricidad Adaptada</h4>
-                    <p>Programas especializados para personas con necesidades educativas especiales. Enfoque inclusivo y sensible.</p>
-                    <div class="specialty-ages">Todas las edades</div>
+                <a href="tenis.html" class="card">
+                    <span class="badge c-orange">Especialidade</span>
+                    <h4>Tenis de Mesa</h4>
+                    <p>Precisión, reflexos e concentración. Iniciación e mellora técnica.</p>
                 </a>
 
-                <div class="specialty-card">
-                    <span class="specialty-badge">Adultos y Mayores</span>
-                    <h4>Actividad Deportiva y Bienestar</h4>
-                    <p>Programas de movimiento, coordinación y gestión emocional para adultos y personas mayores.</p>
-                    <div class="specialty-ages">16+ años</div>
+                <a href="necesidades-especiales.html" class="card">
+                    <span class="badge c-purple">Educación especial</span>
+                    <h4>Deporte e Psicomotricidade Adaptada</h4>
+                    <p>Enfoque inclusivo para persoas con necesidades educativas especiais.</p>
+                </a>
+
+                <a href="mayores.html" class="card">
+                    <span class="badge c-blue">Adultos e maiores</span>
+                    <h4>Actividade e Benestar</h4>
+                    <p>Movemento, coordinación e xestión emocional para adultos e persoas maiores.</p>
+                </a>
+
+                <div class="card">
+                    <span class="badge c-green">Vacacións</span>
+                    <h4>Campamentos de Verán</h4>
+                    <p>Experiencias educativas intensivas no teu centro ou na nosa ubicación. Pregunta por dispoñibilidade.</p>
                 </div>
 
-                <div class="specialty-card">
-                    <span class="specialty-badge">Vacaciones</span>
-                    <h4>Campamentos de Verano</h4>
-                    <p>Experiencias educativas intensivas durante el verano. Actividades variadas en tu espacio o el nuestro.</p>
-                    <div class="specialty-ages">Junio-Agosto</div>
+                <div class="card">
+                    <span class="badge c-purple">Transversal</span>
+                    <h4>Xestión Emocional e Relaxación</h4>
+                    <p>Mindfulness e benestar integrados en todas as nosas actividades.</p>
                 </div>
+            </div>
 
-                <div class="specialty-card">
-                    <span class="specialty-badge">Flexible</span>
-                    <h4>Gestión Emocional y Técnicas de Relajación</h4>
-                    <p>Mindfulness, relajación y bienestar integrados en todas nuestras actividades. Adaptado a cada etapa evolutiva.</p>
-                    <div class="specialty-ages">Todas las edades</div>
-                </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="modalidades.html" class="btn btn-outline-dark">Ver modalidades e frecuencias →</a>
             </div>
         </div>
     </section>
 
-    <section id="angel">
+    <section class="page-section" id="angel">
         <div class="container">
-            <h2>Ángel García Lema</h2>
-            <p class="section-subtitle">El profesional detrás de MoveMentes</p>
+            <h2 class="section-title">Ángel García Lema</h2>
+            <p class="section-subtitle">O profesional detrás de MoveMentes</p>
 
-            <div class="about-grid">
-                <div class="about-image" style="background: var(--bg-light); display: flex; align-items: center; justify-content: center; padding: 40px;">
-                    <img src="logo-clean.png" alt="MoveMentes - Ángel García Lema" style="width: 100%; height: auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: center;" class="about-grid-wrap">
+                <div style="background: var(--bg-light); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <img src="logo-clean.png" alt="MoveMentes" style="width: 100%; height: auto; display: block;">
                 </div>
-                <div class="about-content">
-                    <p><strong>MoveMentes</strong> nace de la ilusión y vocación de Ángel García Lema, graduado en Educación Infantil por la Universidad de A Coruña y técnico en Educación Infantil.</p>
-                    
-                    <p>A lo largo de su trayectoria ha trabajado en distintos centros y proyectos educativos que han enriquecido su manera de enseñar y le han permitido conocer diferentes contextos, tipos de alumnado y necesidades, adaptando siempre su práctica a cada realidad.</p>
+                <div>
+                    <p style="color: var(--text-light); margin-bottom: 18px; line-height: 1.8;"><strong style="color: var(--navy);">MoveMentes</strong> nace da ilusión e vocación de Ángel García Lema, Graduado en Educación Infantil pola Universidade da Coruña e Técnico en Educación Infantil.</p>
+                    <p style="color: var(--text-light); margin-bottom: 24px; line-height: 1.8;">Ao longo da súa traxectoria traballou en distintos centros e proxectos educativos, o que lle permitiu coñecer diferentes contextos, tipos de alumnado e necesidades, adaptando sempre a súa práctica a cada realidade.</p>
 
-                    <h3>Trayectoria Profesional</h3>
-                    <div class="trajectory">
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">📚</div>
-                            <div class="trajectory-content">
-                                <h5>Educación Infantil</h5>
-                                <p>Tutor en Educación Infantil, Colegio CPR CID (A Coruña)</p>
-                            </div>
-                        </div>
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">🏃</div>
-                            <div class="trajectory-content">
-                                <h5>Profesor de Educación Física</h5>
-                                <p>CEIP Ramón de Artaza, CEIP Malvárez, CEIP do Foxo, CEIP Tarrío</p>
-                            </div>
-                        </div>
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">❤️</div>
-                            <div class="trajectory-content">
-                                <h5>Monitor de Educación Especial</h5>
-                                <p>Asociación West Galicia (atención a niños con necesidades educativas especiales)</p>
-                            </div>
-                        </div>
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">🏇</div>
-                            <div class="trajectory-content">
-                                <h5>Monitor de Multideportes</h5>
-                                <p>RSD Hípica (A Coruña)</p>
-                            </div>
-                        </div>
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">🎤</div>
-                            <div class="trajectory-content">
-                                <h5>Formador</h5>
-                                <p>Desarrollo de charlas y talleres formativos en múltiples centros educativos</p>
-                            </div>
-                        </div>
-                        <div class="trajectory-item">
-                            <div class="trajectory-icon">🌍</div>
-                            <div class="trajectory-content">
-                                <h5>Formación Internacional</h5>
-                                <p>Trabajo y formación en metodología Montessori en Italia (La Bottega di Geppetto – La Fata Turchina)</p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul style="list-style: none;">
+                        <li style="padding: 9px 0; font-weight: 500;">✓ Titor de Educación Infantil — Colexio CPR CID (A Coruña)</li>
+                        <li style="padding: 9px 0; font-weight: 500;">✓ Profesor de Educación Física — CEIP Ramón de Artaza, Malvárez, do Foxo, Tarrío</li>
+                        <li style="padding: 9px 0; font-weight: 500;">✓ Monitor de Educación Especial — Asociación West Galicia</li>
+                        <li style="padding: 9px 0; font-weight: 500;">✓ Monitor de Multideporte — RSD Hípica (A Coruña)</li>
+                        <li style="padding: 9px 0; font-weight: 500;">✓ Formación en metodoloxía Montessori — La Bottega di Geppetto, Italia</li>
+                    </ul>
 
-                    <div class="certifications">
-                        <strong>Certificaciones y Competencias</strong>
-                        <ul>
-                            <li>Graduado en Educación Infantil (Universidad de A Coruña)</li>
-                            <li>Técnico en Educación Infantil</li>
-                            <li>Nivel C1 de Gallego (acreditado)</li>
-                            <li>Nivel C de Inglés (acreditado)</li>
-                            <li>Experiencia: más de 20 años en educación y deporte</li>
-                            <li>Ha atendido a miles de niños en múltiples contextos</li>
-                        </ul>
+                    <div style="background: var(--bg-light); padding: 22px; border-radius: 10px; margin-top: 20px; border-left: 5px solid var(--gold);">
+                        <strong style="color: var(--navy); display: block; margin-bottom: 8px;">Certificacións</strong>
+                        Graduado en Educación Infantil (UDC) · Técnico en Educación Infantil · C1 de Galego · Nivel C de Inglés · +20 anos de experiencia en educación e deporte
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="por-que" style="background: var(--bg-light);">
+    <section class="page-section alt">
         <div class="container">
-            <h2>¿Por Qué Elegir MoveMentes?</h2>
-            <p class="section-subtitle">Razones para confiar en nosotros</p>
-
-            <div class="value-props">
-                <div class="value-prop">
-                    <div class="value-prop-icon">🎯</div>
-                    <h4>Propuesta Integral</h4>
-                    <p>Une cuerpo, mente y emociones en un solo programa coherente.</p>
-                </div>
-                <div class="value-prop">
-                    <div class="value-prop-icon">🤝</div>
-                    <h4>Valores Educativos</h4>
-                    <p>Fomenta cooperación, empatía y respeto en todos los participantes.</p>
-                </div>
-                <div class="value-prop">
-                    <div class="value-prop-icon">👥</div>
-                    <h4>Adaptación Personal</h4>
-                    <p>Se ajusta a las necesidades individuales de cada niño/a.</p>
-                </div>
-                <div class="value-prop">
-                    <div class="value-prop-icon">✓</div>
-                    <h4>Implementación Probada</h4>
-                    <p>Ya implementada con gran éxito. Valoración muy positiva de familias y alumnado.</p>
-                </div>
-                <div class="value-prop">
-                    <div class="value-prop-icon">🎓</div>
-                    <h4>Profesionalidad</h4>
-                    <p>Graduado universitario con formación continua y experiencia contrastada.</p>
-                </div>
-                <div class="value-prop">
-                    <div class="value-prop-icon">🌱</div>
-                    <h4>Experiencia Educativa</h4>
-                    <p>Es más que una actividad extraescolar, es una experiencia que deja huella.</p>
-                </div>
-            </div>
-
-            <div class="camp-section">
-                <h3>Campamentos de Verano MoveMentes</h3>
-                <p>Experiencias educativas intensivas disponibles en tu centro o ubicación. Diseñamos programas especializados adaptados a tus necesidades.</p>
-                <a href="#contacto" class="cta-primary">Solicita Información sobre Campamentos</a>
+            <h2 class="section-title">Por que elixir MoveMentes</h2>
+            <div class="card-grid">
+                <div class="card"><h4>🎯 Proposta integral</h4><p>Une corpo, mente e emocións nun só programa coherente.</p></div>
+                <div class="card"><h4>🤝 Valores educativos</h4><p>Fomenta cooperación, empatía e respecto.</p></div>
+                <div class="card"><h4>👥 Adaptación persoal</h4><p>Axústase ás necesidades individuais de cada neno/a.</p></div>
+                <div class="card"><h4>🎓 Profesionalidade</h4><p>Graduado universitario con formación continua e experiencia contrastada.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="cta-section">
+    <section class="cta-section" id="contacto">
         <div class="container">
-            <h2>Ponte en Contacto</h2>
-            <p>¿Interesado en nuestras actividades? Contáctanos para más información, presupuestos o consultas específicas.</p>
+            <h2>Ponte en contacto</h2>
+            <p class="lead">¿Interesado nas nosas actividades? Escríbenos por WhatsApp ou email — resolvemos as túas dúbidas e adaptamos a proposta ás túas necesidades.</p>
+
+            <div>
+                <a href="https://wa.me/34678345540" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+                <a href="mailto:angelgarcialema@gmail.com" class="btn btn-outline">Enviar email</a>
+            </div>
 
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-label">📞 Teléfono</div>
+                    <div class="contact-label">📞 Teléfono / WhatsApp</div>
                     <div class="contact-value">678 345 540</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-label">📧 Email</div>
-                    <div class="contact-value" style="font-size: 1.1em;">angelgarcialema@gmail.com</div>
+                    <div class="contact-value">angelgarcialema@gmail.com</div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-label">📍 Cobertura</div>
-                    <div class="contact-value">Galicia</div>
+                    <div class="contact-label">📍 Ubicación</div>
+                    <div class="contact-value">CEIP Ponte de Xubia</div>
                 </div>
             </div>
 
-            <div style="margin: 50px 0;">
-                <a href="mailto:angelgarcialema@gmail.com" class="cta-primary">Solicitar Información</a>
-            </div>
-
-            <p style="margin-top: 40px; opacity: 0.8; font-size: 0.95em;">Estaremos encantados de resolver tus dudas y adaptar nuestros servicios a tus necesidades.</p>
+            <form class="contact-form" action="mailto:angelgarcialema@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="Nome" placeholder="O teu nome" required>
+                <input type="text" name="Contacto" placeholder="Email ou teléfono" required>
+                <textarea name="Mensaxe" placeholder="Cóntanos que necesitas..."></textarea>
+                <button type="submit" class="btn btn-primary">Enviar mensaxe</button>
+            </form>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 MoveMentes | Educación Integral en Movimiento</p>
-        <p style="margin-top: 10px; font-size: 0.9em;">Ángel García Lema - Graduado en Educación Infantil | Galicia</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 MoveMentes · Corpo activo, mente feliz</p>
+        <p>Ángel García Lema — Graduado en Educación Infantil (UDC) · Galicia</p>
+        <p><a href="colegios.html">Colegios e ANPA</a> · <a href="modalidades.html">Modalidades</a> · <a href="mailto:angelgarcialema@gmail.com">angelgarcialema@gmail.com</a></p>
     </footer>
+
+    <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
 </body>
 </html>
