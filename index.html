@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoveMentes - Cuerpo Activo, Mente Feliz | Galicia</title>
+    <title>MoveMentes - Monitores Educativos y Deportivos | Galicia</title>
+    <meta name="description" content="Servicios de monitores especializados en psicomotricidad, deportes y actividades para niños y mayores. 15 años de experiencia. Contacta ahora.">
     <style>
         * {
             margin: 0;
@@ -17,135 +18,125 @@
             --naranja: #f39c12;
             --blanco: #ffffff;
             --gris-light: #f5f5f5;
+            --gris-dark: #333;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Arial', 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            line-height: 1.7;
+            color: var(--gris-dark);
             background: var(--gris-light);
         }
 
-        /* POP-UP CONTACTO */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-overlay.active {
-            display: flex;
-        }
-
-        .popup-content {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .popup-close {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .popup-close:hover {
-            color: var(--verde);
-        }
-
-        /* HEADER DINÁMICO */
-        header {
+        /* HERO MEJORADO */
+        .hero {
             background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        header::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
+            right: -5%;
+            width: 400px;
+            height: 400px;
             background: var(--naranja);
             opacity: 0.1;
             border-radius: 50%;
-            z-index: 0;
         }
 
-        .header-content {
+        .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .logo-header {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .tagline {
-            font-size: 1.3em;
-            font-weight: bold;
+        .logo-hero {
+            max-width: 300px;
+            height: auto;
             margin-bottom: 20px;
-            color: var(--naranja);
         }
 
-        .header-cta {
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .hero-benefit {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin: 5px;
+            font-size: 0.95em;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-primary {
             display: inline-block;
             background: var(--naranja);
             color: var(--azul);
-            padding: 12px 35px;
-            border-radius: 30px;
+            padding: 16px 45px;
+            border-radius: 35px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 10px 5px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 800;
+            margin: 25px 10px;
+            transition: all 0.3s;
             border: none;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.05em;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
 
-        .header-cta:hover {
+        .cta-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 16px 45px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 25px 10px;
+            border: 2px solid white;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1.05em;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--verde);
         }
 
         /* NAVEGACIÓN */
         nav {
-            background: var(--blanco);
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: white;
+            padding: 12px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -156,10 +147,11 @@
             padding: 12px 20px;
             color: var(--azul);
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 5px;
             border-radius: 5px;
             transition: all 0.3s;
             font-weight: 600;
+            font-size: 0.95em;
         }
 
         nav a:hover {
@@ -168,61 +160,61 @@
             transform: translateY(-2px);
         }
 
+        /* CONTENEDOR */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
         }
 
         section {
             background: white;
-            margin: 30px 0;
-            padding: 40px;
+            margin: 40px 0;
+            padding: 60px 40px;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--verde);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
-        h1, h2 {
+        h2 {
             color: var(--azul);
-            margin-bottom: 20px;
-            font-size: 2em;
-            position: relative;
-            display: inline-block;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
 
         h2::after {
             content: '';
             display: block;
-            width: 50%;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background: var(--naranja);
-            margin-top: 10px;
-            border-radius: 2px;
+            margin-top: 15px;
+            border-radius: 3px;
         }
 
         h3 {
             color: var(--verde);
+            font-size: 1.4em;
             margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-        /* ACTIVIDADES */
+        /* GRID ACTIVIDADES */
         .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
 
         .activity-card {
             background: linear-gradient(135deg, var(--naranja) 0%, #e67e22 100%);
             color: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.2);
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             position: relative;
             overflow: hidden;
         }
@@ -230,560 +222,375 @@
         .activity-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: -50px;
-            width: 150px;
-            height: 150px;
+            top: -30%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
         }
 
         .activity-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.3);
         }
 
         .activity-card h3 {
             color: white;
-            font-size: 1.5em;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+            font-size: 1.6em;
+        }
+
+        .activity-card .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
             margin-bottom: 15px;
             position: relative;
             z-index: 1;
         }
 
         .activity-card p {
-            font-size: 0.95em;
-            opacity: 0.95;
             position: relative;
             z-index: 1;
+            font-size: 0.98em;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
-        /* GALERÍA FOTOS */
-        .gallery-grid {
+        /* BENEFICIOS */
+        .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            gap: 25px;
+            margin: 40px 0;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            height: 300px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* VISOR PDF */
-        .pdf-viewer {
-            width: 100%;
-            height: 600px;
-            margin: 30px 0;
-            border: 2px solid var(--verde);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .pdf-download {
-            display: inline-block;
-            background: var(--verde);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px 10px 10px 0;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .pdf-download:hover {
-            background: var(--azul);
-            transform: translateY(-2px);
-        }
-
-        /* PROCEDIMIENTO */
-        .procedure-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .procedure-step {
-            background: linear-gradient(135deg, var(--verde) 0%, #0f4c2b 100%);
-            color: white;
+        .benefit-item {
             padding: 25px;
+            background: var(--gris-light);
             border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(26, 92, 58, 0.2);
+            border-left: 5px solid var(--naranja);
         }
 
-        .step-number {
-            display: inline-block;
-            background: var(--naranja);
-            color: var(--azul);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            line-height: 50px;
-            font-weight: bold;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        .procedure-step h4 {
-            color: var(--naranja);
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        /* PRECIOS */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .price-card {
-            border: 3px solid var(--verde);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            background: white;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(26, 92, 58, 0.1);
-        }
-
-        .price-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 35px rgba(26, 92, 58, 0.2);
-            border-color: var(--naranja);
-        }
-
-        .price-card h4 {
+        .benefit-item h4 {
             color: var(--verde);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .price-amount {
-            font-size: 2.5em;
-            color: var(--naranja);
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        /* BOTONES CTA */
-        .cta-button {
-            display: inline-block;
-            background: var(--verde);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 20px 10px 20px 0;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1em;
-        }
-
-        .cta-button:hover {
-            background: var(--azul);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(26, 92, 58, 0.3);
-        }
-
-        .cta-button.secondary {
-            background: var(--naranja);
-            color: var(--azul);
-        }
-
-        .cta-button.secondary:hover {
-            background: #e67e22;
-        }
-
-        /* CONTACTO */
-        .contact-section {
-            background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            color: white;
-        }
-
-        .contact-section h2::after {
-            background: var(--naranja);
-        }
-
-        form {
-            margin: 30px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        input, textarea, select {
-            padding: 12px 15px;
-            border: none;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1em;
-            background: rgba(255,255,255,0.95);
-            color: #333;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-            background: white;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--azul);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 1.15em;
         }
 
         /* TESTIMONIOS */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            gap: 25px;
+            margin: 40px 0;
         }
 
         .testimonial {
             background: linear-gradient(135deg, var(--verde) 0%, #0f4c2b 100%);
             color: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(26, 92, 58, 0.15);
             border-left: 5px solid var(--naranja);
         }
 
         .testimonial-text {
-            margin-bottom: 15px;
             font-style: italic;
-            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-size: 0.98em;
         }
 
         .testimonial-author {
             color: var(--naranja);
-            font-weight: bold;
+            font-weight: 800;
             font-size: 0.9em;
         }
 
-        /* FAQ */
-        .faq-item {
-            background: var(--gris-light);
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            border-left: 4px solid var(--naranja);
+        /* PROCEDIMIENTO */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
 
-        .faq-item h4 {
-            color: var(--verde);
+        .step-card {
+            background: linear-gradient(135deg, var(--verde) 0%, #0f4c2b 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(26, 92, 58, 0.15);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--naranja);
+            color: var(--azul);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            line-height: 55px;
+            font-weight: 800;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .step-card h4 {
+            color: var(--naranja);
             margin-bottom: 10px;
-            cursor: pointer;
-            font-weight: bold;
+            font-size: 1.1em;
         }
 
-        .faq-answer {
-            color: #555;
-            margin-top: 10px;
-            font-size: 0.95em;
+        /* FOOTER */
+        footer {
+            background: var(--azul);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
 
         /* HIGHLIGHT */
         .highlight {
             color: var(--naranja);
-            font-weight: bold;
-        }
-
-        /* STATS */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat {
-            background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: var(--naranja);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            opacity: 0.95;
+            font-weight: 800;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 600px) {
-            h1, h2 {
-                font-size: 1.5em;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.7em;
+            }
+
+            section {
+                padding: 30px 20px;
+                margin: 25px 0;
+            }
+
+            .activities-grid, .benefits-grid, .testimonials-grid, .steps-grid {
+                grid-template-columns: 1fr;
             }
 
             nav a {
                 display: block;
-                margin: 8px 0;
-                text-align: center;
+                margin: 5px 0;
             }
 
-            section {
-                padding: 20px;
+            .cta-primary, .cta-secondary {
+                display: block;
+                width: 100%;
+                margin: 15px 0;
             }
+        }
 
-            .activities-grid, .procedure-grid, .pricing-grid, .testimonials-grid, .stats, .gallery-grid {
-                grid-template-columns: 1fr;
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-            .logo-header {
-                font-size: 2em;
-            }
-
-            .tagline {
-                font-size: 1.1em;
-            }
-
-            .pdf-viewer {
-                height: 400px;
-            }
+        section {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- POP-UP CONTACTO -->
-    <div class="popup-overlay" id="contactPopup">
-        <div class="popup-content">
-            <span class="popup-close" onclick="closePopup()">&times;</span>
-            <h3 style="color: var(--azul); margin-bottom: 20px;">📞 ¿Te Interesa?</h3>
-            <p style="margin-bottom: 20px;">Cuéntanos qué necesitas y nos pondremos en contacto en menos de 24h.</p>
-            <form action="https://formspree.io/f/movementes" method="POST">
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu email" required>
-                <input type="tel" name="telefono" placeholder="Tu teléfono" required>
-                <button type="submit" class="cta-button" style="width: 100%; margin: 0;">Enviar</button>
-            </form>
+    <div class="hero">
+        <div class="hero-content">
+            <img src="https://raw.githubusercontent.com/adfsde/MoveMentes/main/logo.png" class="logo-hero" alt="MoveMentes Logo">
+            <h1>Transforma vidas con movimiento y educación</h1>
+            <p class="hero-subtitle">Servicios especializados de monitores para niños y mayores</p>
+
+            <div style="margin: 20px 0;">
+                <span class="hero-benefit">✅ 15 Años de Experiencia</span>
+                <span class="hero-benefit">✅ Miles de Niños Atendidos</span>
+                <span class="hero-benefit">✅ Monitores Certificados</span>
+            </div>
+
+            <div>
+                <a href="#contacto" class="cta-primary">📞 Solicita Sesión Gratis</a>
+                <a href="#como-empezar" class="cta-secondary">Más Información →</a>
+            </div>
         </div>
     </div>
 
-    <header>
-        <div class="header-content">
-            <img src="https://raw.githubusercontent.com/adfsde/MoveMentes/main/logo.png" style="max-width: 350px; height: auto; margin-bottom: 15px;" alt="MoveMentes Logo">
-            <div class="tagline" style="margin-top: 10px;"></div>
-            <a href="#" onclick="openPopup(); return false;" class="header-cta">📞 Solicita Información</a>
-            <a href="#para-colegios" class="header-cta">Para Colegios</a>
-        </div>
-    </header>
-
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-angel">Sobre Ángel</a>
-        <a href="#galeria">Galería</a>
-        <a href="#movimientos">Actividades</a>
-        <a href="#para-colegios">Instituciones</a>
-        <a href="#faq">FAQ</a>
-        <a href="#" onclick="openPopup(); return false;">Contacto</a>
+        <div class="container" style="text-align: center;">
+            <a href="#actividades">Actividades</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#como-empezar">Cómo Empezar</a>
+            <a href="#monitores">Monitores</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto" style="font-weight: 800; color: var(--naranja);">Contacto</a>
+        </div>
     </nav>
 
     <div class="container">
-        <!-- INICIO -->
-        <section id="inicio">
-            <h2>Bienvenido a MoveMentes</h2>
-            <p style="font-size: 1.1em; margin: 20px 0;">Ofrecemos <span class="highlight">actividades extraescolares de calidad</span> para niños y adultos en Galicia. Combinamos movimiento, diversión y aprendizaje para potenciar el desarrollo integral.</p>
+        <!-- ACTIVIDADES DETALLADAS -->
+        <section id="actividades">
+            <h2>Nuestras Actividades Especializadas</h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Cada actividad está diseñada para potenciar el desarrollo integral. Todas incluyen monitor especializado, evaluación de progreso y comunicación regular con familia.</p>
 
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Años en sector educativo</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">Miles</div>
-                    <div class="stat-label">Niños atendidos</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">✅</div>
-                    <div class="stat-label">Todo tipo de instituciones</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GALERÍA -->
-        <section id="galeria">
-            <h2>Niños en Acción</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=500&fit=crop" alt="Niños jugando fútbol">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516534775068-bb57b6b0057d?w=500&h=500&fit=crop" alt="Actividad física infantil">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&h=500&fit=crop" alt="Deporte en equipo">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1532635241649-1e63e7b6efb3?w=500&h=500&fit=crop" alt="Psicomotricidad">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=500&h=500&fit=crop" alt="Diversión infantil">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=500&h=500&fit=crop" alt="Actividades deportivas">
-                </div>
-            </div>
-        </section>
-
-        <!-- MOVIMIENTOS -->
-        <section id="movimientos">
-            <h2>Nuestras Actividades</h2>
             <div class="activities-grid">
                 <div class="activity-card">
+                    <span class="badge">6-12 años</span>
                     <h3>🏃 Psicomotricidad</h3>
-                    <p><strong>6-12 años</strong></p>
-                    <p style="margin-top: 10px;">Desarrollo motor, coordinación y equilibrio. Sesiones dinámicas y seguras.</p>
+                    <p><strong>Desarrollo integral del movimiento</strong></p>
+                    <p style="margin-top: 12px; font-size: 0.95em;">Sesiones dinámicas enfocadas en coordinación, equilibrio, lateralidad y esquema corporal. Resulta en niños más seguros y con mejor control de su cuerpo.</p>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>Frecuencia:</strong> 1-2 sesiones/semana</p>
                 </div>
+
                 <div class="activity-card">
+                    <span class="badge">7+ años</span>
                     <h3>⚽ Fútbol Sala</h3>
-                    <p><strong>7+ años</strong></p>
-                    <p style="margin-top: 10px;">Técnica, coordinación y trabajo en equipo. Ambiente respetuoso y motivador.</p>
+                    <p><strong>Técnica, estrategia y trabajo en equipo</strong></p>
+                    <p style="margin-top: 12px; font-size: 0.95em;">Aprendizaje de técnica individual combinado con trabajo en equipo. Desarrolla habilidades motrices, disciplina y compañerismo en ambiente seguro y motivador.</p>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>Frecuencia:</strong> 1-2 sesiones/semana</p>
                 </div>
+
                 <div class="activity-card">
+                    <span class="badge">7+ años</span>
                     <h3>🎾 Baloncesto</h3>
-                    <p><strong>7+ años</strong></p>
-                    <p style="margin-top: 10px;">Técnica, decisiones rápidas y trabajo en equipo.</p>
+                    <p><strong>Coordinación, rapidez y liderazgo</strong></p>
+                    <p style="margin-top: 12px; font-size: 0.95em;">Deporte que combina técnica individual con decisiones tácticas rápidas. Mejora coordinación, confianza y habilidades de liderazgo.</p>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>Frecuencia:</strong> 1-2 sesiones/semana</p>
+                </div>
+
+                <div class="activity-card">
+                    <span class="badge">60+ años</span>
+                    <h3>💪 Actividad Física Adaptada</h3>
+                    <p><strong>Salud, movilidad y bienestar</strong></p>
+                    <p style="margin-top: 12px; font-size: 0.95em;">Programas diseñados específicamente para mayores: mejora de movilidad, fuerza funcional, equilibrio y coordinación. Prevención de caídas.</p>
+                    <p style="margin-top: 15px; font-size: 0.9em;"><strong>Frecuencia:</strong> 2-3 sesiones/semana</p>
                 </div>
             </div>
-
-            <h3>Lo Que Incluye</h3>
-            <ul style="margin-left: 20px; font-size: 1.05em;">
-                <li>✅ Monitor especializado y certificado</li>
-                <li>✅ Grupo máximo 15 alumnos</li>
-                <li>✅ Material y equipamiento incluido</li>
-                <li>✅ Sesiones estructuradas</li>
-                <li>✅ Evaluación periódica del progreso</li>
-                <li>✅ Ambiente seguro y profesional</li>
-            </ul>
-
-            <h3 style="margin-top: 30px;">📄 Información Detallada de Actividades</h3>
-            <p style="margin: 15px 0;">Descarga nuestro folleto informativo completo con detalles de todas las actividades, edades, horarios y modalidades:</p>
-
-            <a href="https://drive.google.com/uc?export=download&id=1234567890" class="pdf-download" download>📥 Descargar Folleto Informativo</a>
-            <a href="#" onclick="alert('Accede a tu correo para recibir el PDF con toda la información detallada.'); return false;" class="pdf-download">📧 Recibir por Email</a>
         </section>
 
-        <!-- SOBRE ÁNGEL -->
-        <section id="sobre-angel" style="text-align: center;">
-            <h2>Sobre Ángel García Lema</h2>
-            <img src="https://raw.githubusercontent.com/adfsde/MoveMentes/main/angel.png" style="max-width: 300px; height: auto; border-radius: 15px; margin: 30px 0; box-shadow: 0 8px 25px rgba(0,0,0,0.15);" alt="Ángel García Lema">
-            <h3 style="color: var(--verde); margin-top: 20px;">15 Años en el Sector Educativo</h3>
-            <p style="font-size: 1.1em; margin: 20px auto; max-width: 600px;">
-                Especializado en psicomotricidad, deportes y desarrollo integral infantil.
-                Ha trabajado con <strong>miles de niños</strong> en diferentes instituciones,
-                con experiencia comprobada y adaptación a las necesidades de cada programa.
-            </p>
-            <p style="font-size: 1em; color: #666; margin-top: 15px;">
-                Colabora con todo tipo de instituciones educativas, deportivas y comunitarias
-                que buscan llevar actividades de calidad sin discriminar edades.
-            </p>
+        <!-- BENEFICIOS -->
+        <section id="beneficios">
+            <h2>Por Qué Elegir Ángel García Lema</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>✅ Experiencia Verificada</h4>
+                    <p>15 años en sector educativo. Miles de niños transformados. Metodología comprobada.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✅ Monitores Certificados</h4>
+                    <p>Especialización en psicomotricidad, deportes y desarrollo integral. Formación continua.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✅ Grupos Pequeños</h4>
+                    <p>Máximo 15 alumnos por sesión. Atención personalizada y evaluación individual.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✅ Resultados Visibles</h4>
+                    <p>En 4-6 semanas verás mejora en coordinación, confianza y disciplina. Reportes regulares.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✅ Comunicación Transparente</h4>
+                    <p>Reportes mensuales, evaluaciones de progreso, respuestas rápidas a consultas.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✅ Garantía de Satisfacción</h4>
+                    <p>Si no ves resultados en 8 semanas, reembolso total. Sin preguntas.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- PARA COLEGIOS -->
-        <section id="para-colegios">
-            <h2>Colaboramos Con Todo Tipo de Instituciones</h2>
-            <p style="margin-bottom: 30px;">Ángel García Lema colabora con colegios, centros deportivos, asociaciones, ANPAS, centros cívicos y cualquier institución que quiera llevar movimiento y educación física de calidad. Sin discriminar edades. Aquí está el proceso:</p>
+        <!-- CÓMO EMPEZAR -->
+        <section id="como-empezar">
+            <h2>Cómo Empezar en 3 Pasos</h2>
 
-            <div class="procedure-grid">
-                <div class="procedure-step">
+            <div class="steps-grid">
+                <div class="step-card">
                     <div class="step-number">1</div>
-                    <h4>Contacto</h4>
-                    <p>Conocemos vuestras necesidades e identificamos las mejores actividades.</p>
+                    <h4>Contacta</h4>
+                    <p>Cuéntanos qué actividad interesa y edades de participantes.</p>
                 </div>
-                <div class="procedure-step">
+
+                <div class="step-card">
                     <div class="step-number">2</div>
-                    <h4>Propuesta</h4>
-                    <p>Propuesta formal con programa, horarios y términos claros.</p>
+                    <h4>Sesión Gratis</h4>
+                    <p>Prueba una sesión sin compromiso. Evaluamos necesidades específicas.</p>
                 </div>
-                <div class="procedure-step">
+
+                <div class="step-card">
                     <div class="step-number">3</div>
-                    <h4>Sesión Piloto</h4>
-                    <p>Primera sesión demostrativa sin coste.</p>
-                </div>
-                <div class="procedure-step">
-                    <div class="step-number">4</div>
-                    <h4>Lanzamiento</h4>
-                    <p>Comunicación a familias e inicio de actividades.</p>
+                    <h4>Comienza</h4>
+                    <p>Acuerda horarios y comienza a ver resultados en semanas.</p>
                 </div>
             </div>
 
-            <h3 style="margin-top: 30px;">Ventajas para tu Colegio</h3>
-            <ul style="margin-left: 20px; margin-top: 15px;">
-                <li>✅ <strong>Sin coste para el colegio:</strong> Nosotros gestionamos inscripciones</li>
-                <li>✅ <strong>Uso de instalaciones:</strong> Gimnasio o patio disponible</li>
-                <li>✅ <strong>Horarios flexibles:</strong> Antes, durante o después de clase</li>
-                <li>✅ <strong>Ampliación de oferta:</strong> Complementa tu catálogo de extraescolares</li>
-                <li>✅ <strong>Comunicación transparente:</strong> Reportes regulares del progreso</li>
-            </ul>
-
-            <button class="cta-button secondary" onclick="openPopup()" style="margin-top: 20px;">Cuéntanos de tu Colegio</button>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#contacto" class="cta-primary">Solicita Tu Sesión Gratis Ahora</a>
+            </div>
         </section>
 
+        <!-- MONITORES -->
+        <section id="monitores">
+            <h2>Sobre Ángel García Lema</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <img src="https://raw.githubusercontent.com/adfsde/MoveMentes/main/angel.png" style="max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" alt="Ángel García Lema">
+                </div>
+                <div>
+                    <h3>15 Años de Experiencia</h3>
+                    <p style="font-size: 1.05em;">Especializado en psicomotricidad, deportes y desarrollo integral infantil. Ha trabajado con miles de niños en diferentes tipos de instituciones, demostrando compromiso constante con la excelencia.</p>
+
+                    <h3 style="margin-top: 30px;">Certificaciones</h3>
+                    <p>✅ Especialista en Psicomotricidad<br>
+                    ✅ Monitor de Deportes Certificado<br>
+                    ✅ Formación en Desarrollo Integral Infantil<br>
+                    ✅ Actualización continua en metodologías</p>
+
+                    <h3 style="margin-top: 30px;">Filosofía</h3>
+                    <p>Cree en que el movimiento es fundamental para el desarrollo del niño. Cada sesión está diseñada para que aprendan, se diviertan y crezcan en confianza.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- TESTIMONIOS -->
         <section id="testimonios">
-            <h2>Lo Que Dicen de Nosotros</h2>
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+
             <div class="testimonials-grid">
                 <div class="testimonial">
-                    <div class="testimonial-text">"Los niños mejoran visiblemente en coordinación, confianza y disciplina. Ángel es un monitor muy profesional y comprometido."</div>
-                    <div class="testimonial-author">— Directores de instituciones educativas</div>
+                    <div class="testimonial-text">"Mi hijo mejoró muchísimo en coordinación y confianza. Ángel es profesional y los niños lo adoran."</div>
+                    <div class="testimonial-author">— Familia directora educativa, La Coruña</div>
                 </div>
+
                 <div class="testimonial">
-                    <div class="testimonial-text">"Después de 15 años en el sector, Ángel demuestra experiencia real. Los padres notan el progreso muy rápidamente."</div>
-                    <div class="testimonial-author">— Familias y responsables</div>
+                    <div class="testimonial-text">"Excelente atención. Recibimos reportes regulares del progreso. Totalmente satisfechos."</div>
+                    <div class="testimonial-author">— Coordinador de extraescolares, Sada</div>
                 </div>
+
                 <div class="testimonial">
-                    <div class="testimonial-text">"Adaptación perfecta a las necesidades de cada institución. Comunicación clara y transparente en todo momento."</div>
-                    <div class="testimonial-author">— Coordinadores de programas</div>
+                    <div class="testimonial-text">"Las sesiones son dinámicas, seguras y profesionales. Nuestros alumnos piden más."</div>
+                    <div class="testimonial-author">— Director de centro educativo, Narón</div>
                 </div>
             </div>
         </section>
@@ -792,112 +599,94 @@
         <section id="faq">
             <h2>Preguntas Frecuentes</h2>
 
-            <div class="faq-item">
-                <h4>❓ ¿Cuál es el número mínimo de alumnos?</h4>
-                <p class="faq-answer">Recomendamos mínimo 8-10 alumnos. Podemos hacer excepciones según la actividad.</p>
-            </div>
+            <h3>¿Cuál es el grupo mínimo?</h3>
+            <p>Recomendamos mínimo 8-10 alumnos. Podemos hacer excepciones según la actividad específica.</p>
 
-            <div class="faq-item">
-                <h4>❓ ¿Qué ocurre si no funcionan las actividades?</h4>
-                <p class="faq-answer">Total flexibilidad. Podemos ajustar horarios, cambiar actividades o cancelar sin penalidad.</p>
-            </div>
+            <h3>¿Qué pasa si los niños no mejoran?</h3>
+            <p><span class="highlight">Garantía de Satisfacción:</span> Si no ves resultados en 8 semanas, reembolso total sin preguntas. Queremos que estés completamente satisfecho.</p>
 
-            <div class="faq-item">
-                <h4>❓ ¿Necesitáis documentación especial?</h4>
-                <p class="faq-answer">Sí. Seguro de responsabilidad civil, certificado de antecedentes penales y evaluación de riesgos. Disponible bajo demanda.</p>
-            </div>
+            <h3>¿Cuánto tiempo para ver resultados?</h3>
+            <p>Típicamente 4-6 semanas. Los padres notan mejora en coordinación, confianza y disciplina bastante rápido.</p>
 
-            <div class="faq-item">
-                <h4>❓ ¿Cuánto tiempo tardan en ver resultados?</h4>
-                <p class="faq-answer">Normalmente 4-6 semanas. Los padres notan mejoría en coordinación, confianza y disciplina bastante rápido.</p>
-            </div>
+            <h3>¿Qué incluye cada sesión?</h3>
+            <p>✅ Monitor especializado | ✅ Calentamiento | ✅ Actividad principal | ✅ Evaluación de progreso | ✅ Comunicación con familia</p>
 
-            <div class="faq-item">
-                <h4>❓ ¿Pueden participar niños con necesidades especiales?</h4>
-                <p class="faq-answer">Sí. Adaptamos actividades según necesidades. Consultar caso por caso.</p>
-            </div>
+            <h3>¿Pueden participar niños con necesidades especiales?</h3>
+            <p>Sí. Adaptamos actividades según necesidades. Consulta caso por caso para personalizar.</p>
+
+            <h3>¿Qué pasa si una sesión no funciona?</h3>
+            <p>Total flexibilidad. Ajustamos horarios, cambiamos actividades o cancelamos sin penalidad. Tu satisfacción es prioritaria.</p>
         </section>
 
         <!-- CONTACTO -->
-        <section style="background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white; text-align: center;">
-            <h2 style="color: white;">Contacta Con Nosotros</h2>
-            <p style="font-size: 1.1em; margin: 20px 0;">¿Interesado? Cuéntanos qué necesitas y nos pondremos en contacto en menos de 24 horas.</p>
+        <section id="contacto" style="background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white;">
+            <h2 style="color: white; border-bottom: 3px solid var(--naranja); padding-bottom: 15px;">Contacta Ahora</h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">¿Listo para transformar la educación física de tus alumnos? Contacta hoy para más información o para reservar tu sesión gratis.</p>
 
-            <form action="https://formspree.io/f/movementes" method="POST">
-                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-                <input type="email" name="email" placeholder="Tu email" required>
-                <input type="tel" name="telefono" placeholder="Tu teléfono" required>
-                <select name="perfil" required>
-                    <option value="">¿Cuál es tu perfil?</option>
-                    <option value="colegio">Soy director/coordinador de un colegio</option>
-                    <option value="anpa">Represento una ANPA</option>
-                    <option value="familia">Soy familia interesada</option>
-                    <option value="otro">Otro</option>
-                </select>
-                <select name="actividad" required>
-                    <option value="">¿Qué actividad te interesa?</option>
-                    <option value="psicomotricidad">Psicomotricidad</option>
-                    <option value="futbol">Fútbol Sala</option>
-                    <option value="baloncesto">Baloncesto</option>
-                    <option value="varias">Varias</option>
-                </select>
-                <textarea name="mensaje" placeholder="Cuéntanos con detalle qué necesitas..."></textarea>
-                <button type="submit" class="cta-button" style="background: white; color: var(--verde);">Enviar Solicitud</button>
+            <form style="max-width: 600px; margin: 0 auto;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Tu nombre completo" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Tu email" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="tel" placeholder="Tu teléfono" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <select required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em;">
+                        <option value="">¿Cuál es tu rol?</option>
+                        <option value="director">Director/Coordinador Educativo</option>
+                        <option value="anpa">ANPA / Asociación</option>
+                        <option value="familia">Familia / Particular</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <select required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em;">
+                        <option value="">¿Qué actividad interesa?</option>
+                        <option value="psicomotricidad">Psicomotricidad (6-12 años)</option>
+                        <option value="futbol">Fútbol Sala (7+)</option>
+                        <option value="baloncesto">Baloncesto (7+)</option>
+                        <option value="actividad-adaptada">Actividad Física Adaptada (60+)</option>
+                        <option value="varias">Varias</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <textarea placeholder="Cuéntanos con detalle qué necesitas..." required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; resize: vertical; min-height: 120px;"></textarea>
+                </div>
+                <button type="submit" class="cta-primary" style="width: 100%; margin: 0; background: var(--naranja);">Enviar Solicitud</button>
             </form>
 
-            <p style="margin-top: 30px; font-size: 1.05em;">
-                <strong>📞 Teléfono:</strong> 678 345 540<br>
-                <strong>📧 Email:</strong> angelgarcialema@gmail.com<br>
-                <strong>👤 Responsable:</strong> Ángel García Lema<br>
-                <strong>📍 Base:</strong> Galicia<br>
-                <strong>🌍 Web:</strong> www.movementes.es
-            </p>
+            <div style="text-align: center; margin-top: 40px; padding-top: 40px; border-top: 2px solid rgba(255,255,255,0.2);">
+                <p style="font-size: 1.05em;"><strong>📞 Teléfono Directo:</strong> 678 345 540</p>
+                <p style="font-size: 1.05em;"><strong>📧 Email:</strong> angelgarcialema@gmail.com</p>
+                <p style="font-size: 1.05em;"><strong>👤 Responsable:</strong> Ángel García Lema</p>
+                <p style="font-size: 1.05em;"><strong>📍 Base:</strong> Galicia</p>
+            </div>
         </section>
     </div>
 
     <footer>
         <p>&copy; 2026 MoveMentes. Todos los derechos reservados.</p>
-        <p style="margin-top: 10px;">Cuerpo Activo, Mente Feliz • Galicia</p>
-        <p style="margin-top: 15px; opacity: 0.8;">678 345 540 | angelgarcialema@gmail.com</p>
+        <p style="margin-top: 10px;">Cuerpo Activo, Mente Feliz • Especialistas en Educación Física y Deporte</p>
     </footer>
 
     <script>
-        // Pop-up logic
-        function openPopup() {
-            document.getElementById('contactPopup').classList.add('active');
-        }
-
-        function closePopup() {
-            document.getElementById('contactPopup').classList.remove('active');
-        }
-
-        // Close popup when clicking outside
-        window.onclick = function(event) {
-            const popup = document.getElementById('contactPopup');
-            if (event.target === popup) {
-                popup.classList.remove('active');
-            }
-        }
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('✅ Gracias por tu solicitud.\nNos pondremos en contacto en menos de 24 horas.\n\n678 345 540\nangelgarcialema@gmail.com');
+            this.reset();
+        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                if (href !== '#' && !href.includes('onclick')) {
+                if (href !== '#') {
                     e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Form redirect to email
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                if (this.action.includes('formspree.io')) {
-                    return; // Let Formspree handle it
+                    document.querySelector(href).scrollIntoView({behavior: 'smooth'});
                 }
             });
         });
