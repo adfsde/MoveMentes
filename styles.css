@@ -65,6 +65,9 @@ nav.site-nav .nav-links a {
 nav.site-nav .nav-links a:hover { background: var(--bg-light); color: var(--green-dark); }
 nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); }
 
+.nav-toggle { display: none; }
+.nav-burger { display: none; }
+
 /* HERO */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, var(--green-dark) 100%);
@@ -214,7 +217,30 @@ footer.site-footer a { color: var(--gold); text-decoration: none; }
     .hero h1 { font-size: 2em; }
     h2.section-title { font-size: 1.65em; }
     section.page-section { padding: 46px 18px; }
-    nav.site-nav .nav-links { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; }
+
+    .nav-burger {
+        display: block;
+        font-size: 1.5em;
+        line-height: 1;
+        cursor: pointer;
+        padding: 8px 10px;
+        color: var(--navy);
+        border-radius: 6px;
+    }
+    nav.site-nav .nav-burger:hover { background: var(--bg-light); }
+
+    nav.site-nav .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 2px;
+        margin-top: 8px;
+        border-top: 1px solid var(--border);
+        padding-top: 8px;
+    }
+    nav.site-nav .nav-links a { margin: 0; text-align: center; padding: 13px 14px; }
+    .nav-toggle:checked ~ .nav-links { display: flex; }
+
     .btn { display: block; width: 100%; margin: 8px 0; text-align: center; }
     .wa-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
 }
