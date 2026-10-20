@@ -5,42 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoveMentes - Monitores Educativos y Deportivos | Galicia</title>
     <meta name="description" content="Servicios de monitores especializados en psicomotricidad, deportes y actividades para niños y mayores. 15 años de experiencia. Garantía de satisfacción.">
-
-    <!-- Google Analytics - REEMPLAZA "G-XXXXXXXXXX" CON TU ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
+    <!-- Google Analytics (DEMO - reemplazar G-XXXXXXXXXX con tu ID real) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO1234567"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-DEMO1234567');
     </script>
 
-    <!-- Facebook Pixel - REEMPLAZA "XXXXXXXXXXXXXXXXX" CON TU PIXEL ID -->
+    <!-- Facebook Pixel (DEMO - reemplazar con tu Pixel ID real) -->
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'XXXXXXXXXXXXXXXXX');
+      fbq('init', '123456789123456');
       fbq('track', 'PageView');
     </script>
 
-    <!-- Schema JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "MoveMentes",
-      "description": "Servicios de monitores deportivos y educativos",
-      "url": "https://movementes.es",
-      "telephone": "678345540",
-      "email": "angelgarcialema@gmail.com",
-      "areaServed": "Galicia",
-      "priceRange": "€€",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "@id": "#rating",
-        "ratingValue": "4.9",
-        "reviewCount": "47"
-      }
-    }
+    <!-- MailerLite (DEMO - funcionará como demo, se actualizará con tu código real) -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments)};
+        l=d.createElement(e);l.async=1;l.src=u;
+        n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', 'DEMO1234567890');
     </script>
 
     <style>
@@ -578,14 +566,6 @@
                 width: 100%;
                 margin: 15px 0;
             }
-
-            .comparison-table {
-                font-size: 0.9em;
-            }
-
-            th, td {
-                padding: 10px;
-            }
         }
 
         @keyframes fadeInUp {
@@ -602,21 +582,36 @@
         section {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        .demo-badge {
+            display: inline-block;
+            background: var(--alerta);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
-    <!-- POP-UP DESCUENTO -->
+    <!-- POP-UP DESCUENTO CON MAILERLITE DEMO -->
     <div class="modal" id="discountModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2>🎉 OFERTA LIMITADA</h2>
+            <h2>🎉 OFERTA LIMITADA <span class="demo-badge">DEMO</span></h2>
             <div class="discount-badge">
                 10% DESCUENTO<br>
                 Primer mes
             </div>
             <p style="text-align: center; font-size: 1.1em;">Válido hasta: <span id="offerExpires"></span></p>
             <p style="text-align: center; margin-bottom: 20px;">Código: <span class="highlight">MOVEMENTES10</span></p>
-            <button class="cta-primary" style="width: 100%; margin: 0;" onclick="closeModal(); document.getElementById('contacto').scrollIntoView();">Solicitar Ahora</button>
+            
+            <!-- MAILERLITE DEMO FORM -->
+            <div class="ml-embedded" data-form="DEMO1234567890"></div>
+            
+            <p style="font-size: 0.8em; text-align: center; margin-top: 15px; color: #999;">⚠️ DEMO: Cuando agregues tu MailerLite ID, los emails se guardarán en tu lista</p>
         </div>
     </div>
 
@@ -625,7 +620,7 @@
             <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=400&q=80" class="logo-hero" alt="MoveMentes Logo" style="background: white; padding: 10px; border-radius: 10px;">
             <h1>Transforma vidas con movimiento y educación</h1>
             <p class="hero-subtitle">Servicios especializados de monitores para niños y mayores</p>
-
+            
             <div class="countdown-badge" id="countdown">⏰ OFERTA: 10% descuento - Termina en 3 días</div>
 
             <div style="margin: 20px 0;">
@@ -817,7 +812,7 @@
                 <div>
                     <h3>15 Años de Experiencia</h3>
                     <p style="font-size: 1.05em;">Especializado en psicomotricidad, deportes y desarrollo integral infantil. Ha trabajado con miles de niños demostrando compromiso constante con la excelencia.</p>
-
+                    
                     <h3 style="margin-top: 30px;">Certificaciones</h3>
                     <p>✅ Especialista en Psicomotricidad<br>
                     ✅ Monitor de Deportes Certificado<br>
@@ -908,17 +903,32 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
+        <!-- CONTACTO CON CALENDLY DEMO -->
         <section id="contacto" style="background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%); color: white;">
-            <h2 style="color: white; border-bottom: 3px solid var(--naranja); padding-bottom: 15px;">Contacta Ahora</h2>
-            <p style="font-size: 1.1em; margin-bottom: 30px;">¿Listo para transformar la educación física? Contacta hoy. Respuesta en menos de 24 horas.</p>
+            <h2 style="color: white; border-bottom: 3px solid var(--naranja); padding-bottom: 15px;">Contacta Ahora <span class="demo-badge">DEMO CON CALENDLY</span></h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Elige: Reserva directa con Calendly o completa el formulario. Respuesta garantizada en 24 horas.</p>
 
-            <form onsubmit="handleSubmit(event)" style="max-width: 600px; margin: 0 auto;">
-                <input type="text" placeholder="Tu nombre completo" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
-                <input type="email" placeholder="Tu email" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
-                <input type="tel" placeholder="Tu teléfono" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+            <!-- CALENDLY DEMO EMBED -->
+            <div style="max-width: 800px; margin: 0 auto 40px;">
+                <h3 style="color: white; margin-bottom: 15px;">📅 Calendly Demo - Reserva Sesión Gratis</h3>
+                <p style="font-size: 0.9em; margin-bottom: 20px; opacity: 0.9;">👇 Aquí aparecerá tu calendario de Calendly cuando agregues tu URL. Ahora ves un demo:</p>
+                <div style="background: white; color: var(--azul); padding: 30px; border-radius: 10px; text-align: center;">
+                    <p style="font-weight: 700; margin-bottom: 15px;">DEMO: Aquí irá tu calendario de Calendly</p>
+                    <p style="font-size: 0.9em;">Cuando tengas tu URL de Calendly (ej: https://calendly.com/angelgarcia/30min)</p>
+                    <p style="font-size: 0.9em;">Yo reemplazaré este demo con tu calendario real</p>
+                    <button class="cta-primary" onclick="alert('⚠️ DEMO: Con tu Calendly se podrá reservar directamente aquí')">Probar Demo</button>
+                </div>
+            </div>
 
-                <select required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+            <hr style="border: none; border-top: 2px solid rgba(255,255,255,0.2); margin: 40px 0;">
+
+            <h3 style="color: white; margin: 30px 0 20px;">O Completa el Formulario</h3>
+            <form id="contactForm" style="max-width: 600px; margin: 0 auto;">
+                <input type="text" id="nombre" placeholder="Tu nombre completo" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+                <input type="email" id="email" placeholder="Tu email" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+                <input type="tel" id="telefono" placeholder="Tu teléfono" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+                
+                <select id="rol" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
                     <option value="">¿Cuál es tu rol?</option>
                     <option value="director">Director/Coordinador Educativo</option>
                     <option value="anpa">ANPA / Asociación</option>
@@ -926,19 +936,18 @@
                     <option value="otro">Otro</option>
                 </select>
 
-                <select required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
+                <select id="actividad" required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; margin-bottom: 15px;">
                     <option value="">¿Qué actividad interesa?</option>
                     <option value="psicomotricidad">Psicomotricidad (6-12)</option>
                     <option value="futbol">Fútbol Sala (7+)</option>
                     <option value="baloncesto">Baloncesto (7+)</option>
                     <option value="tenis">Tenis de Mesa (8+)</option>
-                    <option value="adaptada">Actividad Adaptada (60+)</option>
+                    <option value="adaptada">Actividad Física Adaptada (60+)</option>
                     <option value="varias">Varias</option>
                 </select>
 
-                <textarea placeholder="Cuéntanos qué necesitas..." required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; resize: vertical; min-height: 120px; margin-bottom: 20px;"></textarea>
-
-                <input type="hidden" name="discount" value="MOVEMENTES10">
+                <textarea id="mensaje" placeholder="Cuéntanos qué necesitas..." required style="width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; resize: vertical; min-height: 120px; margin-bottom: 20px;"></textarea>
+                
                 <button type="submit" class="cta-primary" style="width: 100%; margin: 0; background: var(--naranja);">Enviar Solicitud</button>
             </form>
 
@@ -951,7 +960,7 @@
 
         <!-- REFERRAL -->
         <section style="background: linear-gradient(135deg, var(--naranja) 0%, #e67e22 100%); color: white; text-align: center;">
-            <h2 style="color: white;">💰 Programa de Referidos</h2>
+            <h2 style="color: white;">💰 Programa de Referidos <span class="demo-badge">ACTIVO</span></h2>
             <p style="font-size: 1.2em; margin: 20px 0;">Gana <span class="highlight" style="color: white; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 5px;">€50</span> por cada amigo que refiera y contrate</p>
             <p style="font-size: 1.05em;">Sin límite de referidos. Dinero directo a tu cuenta.</p>
             <button class="cta-primary" onclick="copyToClipboard('MOVEMENTES10')" style="background: white; color: var(--naranja);">Copiar Código</button>
@@ -961,6 +970,7 @@
     <footer>
         <p>&copy; 2026 MoveMentes. Todos los derechos reservados.</p>
         <p style="margin-top: 10px;">Cuerpo Activo, Mente Feliz • 15 años de experiencia • Garantía 100%</p>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">⚠️ VERSIÓN DEMO: Los servicios de MailerLite y Calendly están en modo demo. Se activarán completamente cuando configures tus cuentas.</p>
     </footer>
 
     <script>
@@ -989,12 +999,12 @@
             const participants = parseInt(document.getElementById('participants').value) || 1;
             const frequency = parseInt(document.getElementById('frequency').value) || 1;
             const duration = document.getElementById('duration').value;
-
+            
             let pricePerSession = duration == '45' ? 30 : duration == '60' ? 40 : 50;
             const monthSessions = frequency * 4;
             const totalPrice = participants * pricePerSession * monthSessions;
             const discountedPrice = Math.round(totalPrice * 0.9);
-
+            
             document.getElementById('priceResult').textContent = '€' + totalPrice;
             document.getElementById('discountPrice').textContent = '€' + discountedPrice;
         }
@@ -1006,11 +1016,11 @@
         }
 
         // FORM
-        function handleSubmit(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('✅ Solicitud enviada con éxito.\nNos pondremos en contacto en menos de 24 horas.\n\nCódigo descuento: MOVEMENTES10\nTeléfono: 678 345 540');
             e.target.reset();
-        }
+        });
 
         // COPY
         function copyToClipboard(text) {
@@ -1022,6 +1032,16 @@
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('ref')) {
             console.log('Referido por:', urlParams.get('ref'));
+        }
+
+        // GA TRACKING
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view');
+        }
+
+        // FB PIXEL TRACKING
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'ViewContent');
         }
     </script>
 </body>
