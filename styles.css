@@ -330,6 +330,58 @@ a.card:hover { transform: translateY(-6px) rotate(-0.3deg); box-shadow: 0 18px 4
 .card h3, .card h4 { color: var(--navy); margin-bottom: 10px; }
 .card p { color: var(--text-light); font-size: 0.95em; }
 
+/* BIO / TIMELINE (Ángel García Lema) */
+.bio-layout { max-width: 820px; margin: 0 auto; }
+.bio-intro p { color: var(--text-light); margin-bottom: 16px; line-height: 1.8; font-size: 1.08em; }
+.bio-intro { margin-bottom: 36px; }
+
+.timeline { position: relative; margin: 0 0 36px; padding-left: 60px; }
+.timeline::before { content: ''; position: absolute; left: 24px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 26px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+    position: absolute; left: -60px; top: 0;
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3em;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    border: 3px solid var(--white);
+}
+.timeline-content { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; box-shadow: 0 4px 14px rgba(20,49,74,0.05); }
+.timeline-content h5 { color: var(--navy); font-size: 1em; font-weight: 800; margin-bottom: 3px; }
+.timeline-content p { color: var(--text-light); font-size: 0.9em; }
+
+@media (max-width: 600px) {
+    .timeline { padding-left: 50px; }
+    .timeline::before { left: 19px; }
+    .timeline-dot { left: -50px; width: 40px; height: 40px; font-size: 1.1em; }
+}
+
+/* NUMBERED GRID (¿Qué é MoveMentes?) */
+.numbered-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; margin: 20px 0; position: relative; }
+.numbered-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid transparent;
+    border-radius: 14px;
+    padding: 32px 28px 28px;
+    box-shadow: 0 8px 24px rgba(20,49,74,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.numbered-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(20,49,74,0.12); }
+.numbered-card-num {
+    position: absolute;
+    top: -6px; right: 12px;
+    font-size: 3.6em;
+    font-weight: 900;
+    opacity: 0.1;
+    line-height: 1;
+}
+.numbered-card h3 { color: var(--navy); margin-bottom: 10px; position: relative; }
+.numbered-card p { color: var(--text-light); font-size: 0.95em; position: relative; }
+
 /* CREDENTIALS BOX */
 .credentials-box {
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
@@ -427,13 +479,14 @@ a.card:hover { transform: translateY(-6px) rotate(-0.3deg); box-shadow: 0 18px 4
 .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin: 40px 0; }
 .pillar { text-align: center; padding: 24px; }
 .pillar-icon {
-    width: 68px; height: 68px; border-radius: 50%;
+    width: 72px; height: 72px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.9em; margin: 0 auto 16px;
+    margin: 0 auto 16px;
     color: var(--white);
     box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     transition: transform 0.3s ease;
 }
+.pillar-icon svg { width: 32px; height: 32px; }
 .pillar:hover .pillar-icon { transform: scale(1.12) rotate(-4deg); }
 .pillar h4 { color: var(--navy); font-size: 1.15em; margin-bottom: 8px; }
 .pillar p { color: var(--text-light); font-size: 0.93em; }

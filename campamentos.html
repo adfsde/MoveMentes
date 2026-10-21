@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campamentos de Vacacións | MoveMentes</title>
+    <meta name="description" content="Campamentos de vacacións con MoveMentes: experiencias educativas intensivas en calquera etapa vacacional. Galicia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-dots">
+                <span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span>
+            </div>
+            <img src="logo-transparent.png" alt="MoveMentes" class="preloader-logo" id="preloader-logo">
+            <p class="preloader-tag" id="preloader-tag">Corpo activo, mente feliz</p>
+            <p class="preloader-skip">Toca para continuar</p>
+        </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="color-strip"></div>
+    <nav class="site-nav">
+        <div class="nav-glass-bg"></div>
+        <div class="container">
+            <a href="index.html" class="logo-link"><img src="logo-transparent.png" alt="MoveMentes" class="nav-logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-burger" aria-label="Menú">☰</label>
+            <div class="nav-links">
+                <a href="index.html#actividades">Actividades</a>
+                <a href="colegios.html">Colegios e ANPA</a>
+                <a href="instituciones.html">Institucións</a>
+                <a href="index.html#contacto" class="nav-cta">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero hero-blue">
+        <div class="hero-bg-photo" style="background-image: url('foto-campamentos.jpg');"></div>
+        <div class="container hero-inner">
+            <div class="hero-tag">Vacacións</div>
+            <h1>🎒 Campamentos de Vacacións</h1>
+            <p class="hero-subtitle">Experiencias educativas intensivas en calquera etapa vacacional.</p>
+            <a href="https://wa.me/34678345540?text=Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20campamentos" class="btn btn-whatsapp" target="_blank" rel="noopener">Solicita información</a>
+        </div>
+    </div>
+
+    <div class="content-photo-wrap container">
+        <img src="foto-campamentos.jpg" alt="Nenos xogando en grupo ao aire libre" class="content-photo">
+    </div>
+
+    <div class="container">
+        <section class="page-section">
+            <h2 class="section-title">Campamentos en calquera etapa vacacional</h2>
+            <p style="font-size: 1.05em; color: var(--text-light); max-width: 760px;">Nadal, Semana Santa ou verán: organizamos campamentos educativos intensivos adaptados ao teu centro ou grupo, combinando psicomotricidade, multideporte e xogos en equipo.</p>
+        </section>
+
+        <section class="page-section alt">
+            <h2 class="section-title">Que inclúe</h2>
+            <div class="card-grid">
+                <div class="card"><h4>🤸 Actividade física variada</h4><p>Psicomotricidade, multideporte e xogos cooperativos.</p></div>
+                <div class="card"><h4>🤝 Traballo en equipo</h4><p>Dinámicas de grupo que fomentan a cooperación.</p></div>
+                <div class="card"><h4>❤️ Benestar emocional</h4><p>Espazos de relaxación e xestión emocional.</p></div>
+                <div class="card"><h4>🗓️ Horario flexible</h4><p>Adaptado ás datas e dispoñibilidade do teu centro.</p></div>
+            </div>
+        </section>
+
+        <section class="page-section alt" id="contacto">
+            <h2 class="section-title">Solicita información</h2>
+            <p class="section-subtitle">Contámosche sen compromiso como organizar o campamento no teu centro.</p>
+            <div style="margin-bottom: 30px;">
+                <a href="https://wa.me/34678345540" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a href="mailto:angelgarcialema@gmail.com" class="btn btn-outline-dark">📧 Email</a>
+            </div>
+            <form class="contact-form" action="mailto:angelgarcialema@gmail.com" method="post" enctype="text/plain" style="margin-left: 0;">
+                <input type="text" name="Nome" placeholder="O teu nome" required>
+                <input type="text" name="Contacto" placeholder="Email ou teléfono" required>
+                <textarea name="Mensaxe" placeholder="Cóntanos sobre o campamento que che interesa..."></textarea>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo-transparent.png" alt="MoveMentes">
+        <p>&copy; 2026 MoveMentes</p>
+        <p><a href="index.html">← Volver a inicio</a></p>
+    </footer>
+
+    <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+
+    <script src="main.js?v=7"></script>
+</body>
+</html>

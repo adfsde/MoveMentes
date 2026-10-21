@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
     <div class="preloader" id="preloader">
@@ -80,18 +80,21 @@
         <div class="container">
             <h2 class="section-title reveal">¿Qué é MoveMentes?</h2>
 
-            <div class="card-grid">
-                <div class="card reveal">
+            <div class="numbered-grid">
+                <div class="numbered-card reveal">
+                    <span class="numbered-card-num" style="color: var(--green);">01</span>
                     <span class="badge c-green">Edades temperás</span>
                     <h3>Psicomotricidade e Movemento Libre</h3>
                     <p>Dirixida a idades temperás mediante xogos e dinámicas deseñadas para favorecer a coordinación, o equilibrio e a expresión corporal.</p>
                 </div>
-                <div class="card reveal">
+                <div class="numbered-card reveal">
+                    <span class="numbered-card-num" style="color: var(--orange);">02</span>
                     <span class="badge c-orange">Primaria e ESO</span>
                     <h3>Iniciación Multideportiva</h3>
                     <p>Orientada ao alumnado de maior idade, cun achegamento lúdico a distintas disciplinas deportivas, promovendo a cooperación e o traballo en equipo.</p>
                 </div>
-                <div class="card reveal">
+                <div class="numbered-card reveal">
+                    <span class="numbered-card-num" style="color: var(--purple);">03</span>
                     <span class="badge c-purple">Todas as idades</span>
                     <h3>Xestión Emocional</h3>
                     <p>Técnicas de relaxación e exercicios adaptados a cada etapa evolutiva para fomentar o recoñecemento, expresión e regulación das emocións.</p>
@@ -101,17 +104,23 @@
             <h3 style="text-align: center; margin-top: 56px; margin-bottom: 30px; color: var(--navy);">Os 3 piares de MoveMentes</h3>
             <div class="pillars">
                 <div class="pillar reveal">
-                    <div class="pillar-icon" style="background: var(--green);">🏃</div>
+                    <div class="pillar-icon" style="background: var(--green);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+                    </div>
                     <h4>Corpo</h4>
                     <p>Desenvolvemento físico integral: coordinación, equilibrio, forza e confianza motriz.</p>
                 </div>
                 <div class="pillar reveal">
-                    <div class="pillar-icon" style="background: var(--lightblue);">💭</div>
+                    <div class="pillar-icon" style="background: var(--lightblue);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-6 6c0 2.3 1.3 3.8 2.3 5.2.5.7 1 1.4 1.2 2.3h5c.2-.9.7-1.6 1.2-2.3C16.7 12.8 18 11.3 18 9a6 6 0 0 0-6-6Z"/></svg>
+                    </div>
                     <h4>Mente</h4>
                     <p>Estimulación cognitiva, creatividade, concentración e aprendizaxe colaborativa.</p>
                 </div>
                 <div class="pillar reveal">
-                    <div class="pillar-icon" style="background: var(--purple);">❤️</div>
+                    <div class="pillar-icon" style="background: var(--purple);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.1-9.3-8.3C1 9.3 2.5 5.5 6.3 5.5c2 0 3.5 1.3 5.7 3.8 2.2-2.5 3.7-3.8 5.7-3.8 3.8 0 5.3 3.8 3.6 7.2C19 16.9 12 21 12 21Z"/></svg>
+                    </div>
                     <h4>Emocións</h4>
                     <p>Recoñecemento, regulación e expresión saudable das emocións.</p>
                 </div>
@@ -141,7 +150,7 @@
                     <div class="photo-card-body">
                         <span class="badge c-orange">Especialidade</span>
                         <h4>Fútbol Sala</h4>
-                        <p>Técnica, táctica e espírito de equipo. Máis de 20 anos de experiencia.</p>
+                        <p>Técnica e táctica en pista. Experiencia federada en fútbol sala.</p>
                     </div>
                 </a>
 
@@ -150,7 +159,7 @@
                     <div class="photo-card-body">
                         <span class="badge c-orange">Especialidade</span>
                         <h4>Fútbol Campo</h4>
-                        <p>Técnica, táctica e espírito de equipo ao aire libre. Máis de 20 anos de experiencia.</p>
+                        <p>Visión de xogo ao aire libre. Anos de experiencia en categorías federadas.</p>
                     </div>
                 </a>
 
@@ -181,14 +190,14 @@
                     </div>
                 </a>
 
-                <div class="photo-card reveal">
+                <a href="campamentos.html" class="photo-card reveal">
                     <img src="foto-campamentos-card.jpg" alt="Nenos xogando en grupo ao aire libre">
                     <div class="photo-card-body">
                         <span class="badge c-green">Vacacións</span>
                         <h4>Campamentos de Vacacións</h4>
                         <p>Experiencias educativas intensivas en calquera etapa vacacional, no teu centro. Pregunta por dispoñibilidade.</p>
                     </div>
-                </div>
+                </a>
 
             </div>
 
@@ -203,44 +212,59 @@
             <h2 class="section-title reveal">Ángel García Lema</h2>
             <p class="section-subtitle reveal">O profesional detrás de MoveMentes</p>
 
-            <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: center;" class="about-grid-wrap reveal">
-                <div style="background: var(--white); border-radius: 14px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.07);">
-                    <img src="logo-transparent.png" alt="MoveMentes" style="width: 100%; height: auto; display: block;">
+            <div class="bio-layout">
+                <div class="bio-intro reveal">
+                    <p><strong style="color: var(--navy);">MoveMentes</strong> nace da ilusión e vocación de Ángel García Lema, Graduado en Educación Infantil pola Universidade da Coruña.</p>
+                    <p>Ao longo da súa traxectoria traballou en distintos centros e proxectos educativos, o que lle permitiu coñecer diferentes contextos, tipos de alumnado e necesidades, adaptando sempre a súa práctica a cada realidade.</p>
                 </div>
-                <div>
-                    <p style="color: var(--text-light); margin-bottom: 18px; line-height: 1.8;"><strong style="color: var(--navy);">MoveMentes</strong> nace da ilusión e vocación de Ángel García Lema, Graduado en Educación Infantil pola Universidade da Coruña.</p>
-                    <p style="color: var(--text-light); margin-bottom: 24px; line-height: 1.8;">Ao longo da súa traxectoria traballou en distintos centros e proxectos educativos, o que lle permitiu coñecer diferentes contextos, tipos de alumnado e necesidades, adaptando sempre a súa práctica a cada realidade.</p>
 
-                    <ul style="list-style: none;">
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Profesor de Educación Física en Educación Primaria, en varios centros educativos</li>
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Titor de Educación Infantil nun centro educativo</li>
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Monitor de nenos e nenas con necesidades educativas especiais, nunha asociación especializada</li>
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Monitor de multideporte nun club deportivo</li>
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Charlas e obradoiros formativos en múltiples centros educativos</li>
-                        <li style="padding: 9px 0; font-weight: 500;">✓ Formación na metodoloxía Montessori durante tres meses en Italia</li>
-                    </ul>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--green);">📚</div>
+                        <div class="timeline-content"><h5>Profesor de Educación Física</h5><p>Educación Primaria, en varios centros educativos</p></div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--lightblue);">🧸</div>
+                        <div class="timeline-content"><h5>Titor de Educación Infantil</h5><p>Nun centro educativo</p></div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--purple);">🤝</div>
+                        <div class="timeline-content"><h5>Monitor de educación especial</h5><p>Con nenos e nenas con necesidades educativas especiais, nunha asociación especializada</p></div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--orange);">⚽</div>
+                        <div class="timeline-content"><h5>Monitor de multideporte</h5><p>Nun club deportivo</p></div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--pink);">🎤</div>
+                        <div class="timeline-content"><h5>Formador</h5><p>Charlas e obradoiros formativos en múltiples centros educativos</p></div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot" style="background: var(--gold);">🌍</div>
+                        <div class="timeline-content"><h5>Formación internacional</h5><p>Metodoloxía Montessori durante tres meses en Italia</p></div>
+                    </div>
+                </div>
 
-                    <div class="credentials-box">
-                        <div class="credentials-stat">
-                            <span class="credentials-stat-num count-up" data-target="20">0</span>
-                            <span class="credentials-stat-label">+ anos de experiencia<br>en educación e deporte</span>
-                        </div>
-                        <strong class="credentials-heading">Titulacións</strong>
-                        <div class="credentials-chips">
-                            <span class="chip">🎓 Graduado en Educación Infantil (UDC)</span>
-                            <span class="chip">🎓 FP Superior en Educación Infantil</span>
-                            <span class="chip">🗣️ C1 de Galego</span>
-                            <span class="chip">🗣️ Nivel C de Inglés</span>
-                        </div>
-                        <strong class="credentials-heading">Formación continua</strong>
-                        <div class="credentials-chips">
-                            <span class="chip">💻 Competencia dixital</span>
-                            <span class="chip">🧩 Xestión de aulas diversas</span>
-                            <span class="chip">🎯 Coaching educativo</span>
-                            <span class="chip">🧘 Mindfulness</span>
-                            <span class="chip">🌍 Aulas bilingües</span>
-                            <span class="chip">💡 Metodoloxías educativas innovadoras</span>
-                        </div>
+                <div class="credentials-box reveal">
+                    <div class="credentials-stat">
+                        <span class="credentials-stat-num count-up" data-target="20">0</span>
+                        <span class="credentials-stat-label">+ anos de experiencia<br>en educación e deporte</span>
+                    </div>
+                    <strong class="credentials-heading">Titulacións</strong>
+                    <div class="credentials-chips">
+                        <span class="chip">🎓 Graduado en Educación Infantil (UDC)</span>
+                        <span class="chip">🎓 FP Superior en Educación Infantil</span>
+                        <span class="chip">🗣️ C1 de Galego</span>
+                        <span class="chip">🗣️ Nivel C de Inglés</span>
+                    </div>
+                    <strong class="credentials-heading">Formación continua</strong>
+                    <div class="credentials-chips">
+                        <span class="chip">💻 Competencia dixital</span>
+                        <span class="chip">🧩 Xestión de aulas diversas</span>
+                        <span class="chip">🎯 Coaching educativo</span>
+                        <span class="chip">🧘 Mindfulness</span>
+                        <span class="chip">🌍 Aulas bilingües</span>
+                        <span class="chip">💡 Metodoloxías educativas innovadoras</span>
                     </div>
                 </div>
             </div>
@@ -255,6 +279,8 @@
                 <div class="card reveal"><h4>🤝 Valores educativos</h4><p>Fomenta cooperación, empatía e respecto.</p></div>
                 <div class="card reveal"><h4>👥 Adaptación persoal</h4><p>Axústase ás necesidades individuais de cada persoa.</p></div>
                 <div class="card reveal"><h4>🎓 Profesionalidade</h4><p>Graduado universitario con formación continua e experiencia contrastada.</p></div>
+                <div class="card reveal"><h4>🗓️ Flexibilidade</h4><p>Adaptámonos a horarios, espazos e necesidades de cada centro.</p></div>
+                <div class="card reveal"><h4>🏆 Experiencia federada</h4><p>Anos de práctica deportiva a nivel federado en varias disciplinas.</p></div>
             </div>
         </div>
     </section>
@@ -298,6 +324,6 @@
     </footer>
 
     <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
-    <script src="main.js?v=6"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>
