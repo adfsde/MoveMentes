@@ -186,6 +186,28 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 .objetivo-text strong { color: inherit; font-weight: 800; }
 @media (prefers-reduced-motion: reduce) { .objetivo-icon { animation: none; } }
 
+/* TALLER CTA — "talleres por días soltos" */
+.taller-cta {
+    display: flex; align-items: center; gap: 14px;
+    background: linear-gradient(135deg, #E8F4F8 0%, #D2EAF2 100%);
+    border: 2px solid var(--lightblue);
+    padding: 16px 24px; margin: 24px 0 0;
+    text-decoration: none; border-radius: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.taller-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(46,168,201,0.25); }
+.taller-cta-icon { font-size: 1.8em; display: inline-block; flex-shrink: 0; animation: tallerPulse 2.4s ease-in-out infinite; }
+@keyframes tallerPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(-6deg); }
+}
+.taller-cta-text { color: var(--navy); font-size: 1.02em; font-weight: 500; }
+.taller-cta-text strong { font-weight: 800; }
+.taller-cta-arrow { font-size: 1.3em; color: var(--navy); font-weight: 800; transition: transform 0.25s ease; margin-left: auto; flex-shrink: 0; }
+.taller-cta:hover .taller-cta-arrow { transform: translateX(6px); }
+@media (prefers-reduced-motion: reduce) { .taller-cta-icon { animation: none; } }
+@media (max-width: 600px) { .taller-cta { flex-wrap: wrap; } }
+
 /* QUIZ CTA — "Fai o test" */
 .quiz-cta {
     display: inline-flex; align-items: center; gap: 14px;
