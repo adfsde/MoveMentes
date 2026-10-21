@@ -2,6 +2,22 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ACCESIBILIDADE */
+.sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.skip-link {
+    position: absolute; top: -60px; left: 10px; z-index: 5000;
+    background: var(--navy); color: var(--white); padding: 12px 20px;
+    border-radius: 8px; text-decoration: none; font-weight: 700;
+    transition: top 0.2s ease;
+}
+.skip-link:focus { top: 10px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, .nav-burger:focus-visible {
+    outline: 3px solid var(--lightblue); outline-offset: 2px; border-radius: 4px;
+}
+
 :root {
     /* Paleta viva e natural — mesma saturación/luminosidade en todos os acentos para que combinen entre si */
     --navy: #16324F;

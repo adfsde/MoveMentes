@@ -9,9 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="canonical" href="https://www.movementes.es/futbol-campo.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MoveMentes">
+    <meta property="og:locale" content="gl_ES">
+    <meta property="og:url" content="https://www.movementes.es/futbol-campo.html">
+    <meta property="og:title" content="Fútbol Campo | MoveMentes">
+    <meta property="og:description" content="Fútbol campo con MoveMentes: técnica, táctica e espírito de equipo para nenos e nenas en Galicia.">
+    <meta property="og:image" content="https://www.movementes.es/foto-futbol-campo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fútbol Campo | MoveMentes">
+    <meta name="twitter:description" content="Fútbol campo con MoveMentes: técnica, táctica e espírito de equipo para nenos e nenas en Galicia.">
+    <meta name="twitter:image" content="https://www.movementes.es/foto-futbol-campo.jpg">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Ir ao contido principal</a>
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-dots">
@@ -38,6 +55,7 @@
         </div>
     </nav>
 
+    <div id="main-content"></div>
     <div class="hero hero-orange">
         <div class="hero-bg-photo" style="background-image: url('foto-futbol-campo.jpg');"></div>
         <div class="container hero-inner">
@@ -49,7 +67,7 @@
     </div>
 
     <div class="content-photo-wrap container">
-        <img src="foto-futbol-campo.jpg" alt="Nenos xogando a fútbol campo" class="content-photo">
+        <img loading="lazy" decoding="async" src="foto-futbol-campo.jpg" alt="Nenos xogando a fútbol campo" class="content-photo">
     </div>
 
     <div class="container">
@@ -79,22 +97,25 @@
                 <a href="mailto:angelgarcialema@gmail.com" class="btn btn-outline-dark">📧 Email</a>
             </div>
             <form class="contact-form" action="mailto:angelgarcialema@gmail.com" method="post" enctype="text/plain" style="margin-left: 0;">
-                <input type="text" name="Nome" placeholder="O teu nome" required>
-                <input type="text" name="Contacto" placeholder="Email ou teléfono" required>
-                <textarea name="Mensaxe" placeholder="Cóntanos sobre o/a teu/túa fillo/a..."></textarea>
+                <label class="sr-only" for="futbol-campo-nome">Nome</label>
+                <input id="futbol-campo-nome" type="text" name="Nome" placeholder="O teu nome" required>
+                <label class="sr-only" for="futbol-campo-contacto">Contacto</label>
+                <input id="futbol-campo-contacto" type="text" name="Contacto" placeholder="Email ou teléfono" required>
+                <label class="sr-only" for="futbol-campo-mensaxe">Mensaxe</label>
+                <textarea id="futbol-campo-mensaxe" name="Mensaxe" placeholder="Cóntanos sobre o/a teu/túa fillo/a..."></textarea>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </section>
     </div>
 
     <footer class="site-footer">
-        <img src="logo-transparent.png" alt="MoveMentes">
+        <img loading="lazy" decoding="async" src="logo-transparent.png" alt="MoveMentes">
         <p>&copy; 2026 MoveMentes</p>
         <p><a href="index.html">← Volver a inicio</a></p>
     </footer>
 
     <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
 
-    <script src="main.js?v=9"></script>
+    <script src="main.js?v=10"></script>
 </body>
 </html>

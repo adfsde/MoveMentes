@@ -9,9 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="canonical" href="https://www.movementes.es/colegios.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MoveMentes">
+    <meta property="og:locale" content="gl_ES">
+    <meta property="og:url" content="https://www.movementes.es/colegios.html">
+    <meta property="og:title" content="Para Colexios e ANPA | MoveMentes">
+    <meta property="og:description" content="Leva MoveMentes ao teu colexio ou ANPA: actividade extraescolar integral con monitor especializado. Proposta personalizada, Galicia.">
+    <meta property="og:image" content="https://www.movementes.es/foto-psicomotricidade.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Para Colexios e ANPA | MoveMentes">
+    <meta name="twitter:description" content="Leva MoveMentes ao teu colexio ou ANPA: actividade extraescolar integral con monitor especializado. Proposta personalizada, Galicia.">
+    <meta name="twitter:image" content="https://www.movementes.es/foto-psicomotricidade.jpg">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Ir ao contido principal</a>
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-dots">
@@ -38,6 +55,7 @@
         </div>
     </nav>
 
+    <div id="main-content"></div>
     <div class="hero">
         <div class="container">
             <div class="hero-tag">Colexios e ANPA</div>
@@ -78,16 +96,19 @@
                 <a href="mailto:angelgarcialema@gmail.com" class="btn btn-outline">📧 angelgarcialema@gmail.com</a>
             </div>
             <form class="contact-form" action="mailto:angelgarcialema@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="Centro" placeholder="Nome do colexio / ANPA" required>
-                <input type="text" name="Contacto" placeholder="Nome de contacto, email ou teléfono" required>
-                <textarea name="Mensaxe" placeholder="Cóntanos sobre o centro e o que buscades..."></textarea>
+                <label class="sr-only" for="colegios-centro">Nome do colexio ou ANPA</label>
+                <input id="colegios-centro" type="text" name="Centro" placeholder="Nome do colexio / ANPA" required>
+                <label class="sr-only" for="colegios-contacto">Contacto</label>
+                <input id="colegios-contacto" type="text" name="Contacto" placeholder="Nome de contacto, email ou teléfono" required>
+                <label class="sr-only" for="colegios-mensaxe">Mensaxe</label>
+                <textarea id="colegios-mensaxe" name="Mensaxe" placeholder="Cóntanos sobre o centro e o que buscades..."></textarea>
                 <button type="submit" class="btn btn-primary">Enviar solicitude</button>
             </form>
         </section>
     </div>
 
     <footer class="site-footer">
-        <img src="logo-transparent.png" alt="MoveMentes">
+        <img loading="lazy" decoding="async" src="logo-transparent.png" alt="MoveMentes">
         <p>&copy; 2026 MoveMentes</p>
         <p><a href="index.html">← Volver a inicio</a></p>
     </footer>
@@ -95,6 +116,6 @@
     <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
 
 
-    <script src="main.js?v=9"></script>
+    <script src="main.js?v=10"></script>
 </body>
 </html>
