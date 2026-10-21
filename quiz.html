@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atopa a túa actividade | MoveMentes</title>
+    <meta name="description" content="Responde 2 preguntas rápidas e descobre que actividade de MoveMentes encaixa mellor contigo ou co teu fillo/a.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="canonical" href="https://www.movementes.es/quiz.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MoveMentes">
+    <meta property="og:locale" content="gl_ES">
+    <meta property="og:url" content="https://www.movementes.es/quiz.html">
+    <meta property="og:title" content="Atopa a túa actividade | MoveMentes">
+    <meta property="og:description" content="Responde 2 preguntas rápidas e descobre que actividade de MoveMentes encaixa mellor contigo ou co teu fillo/a.">
+    <meta property="og:image" content="https://www.movementes.es/foto-psicomotricidade.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atopa a túa actividade | MoveMentes">
+    <meta name="twitter:description" content="Responde 2 preguntas rápidas e descobre que actividade de MoveMentes encaixa mellor contigo ou co teu fillo/a.">
+    <meta name="twitter:image" content="https://www.movementes.es/foto-psicomotricidade.webp">
+    <style>
+        .quiz-wrap { max-width: 680px; margin: 0 auto; }
+        .quiz-progress { display: flex; gap: 6px; margin-bottom: 36px; }
+        .quiz-progress-seg { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+        .quiz-progress-seg.done { background: var(--green); }
+        .quiz-step { display: none; }
+        .quiz-step.is-active { display: block; }
+        .quiz-question { font-size: 1.5em; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+        .quiz-options { display: grid; gap: 14px; }
+        .quiz-option {
+            display: block; width: 100%; text-align: left; padding: 20px 22px;
+            background: var(--white); border: 2px solid var(--border); border-radius: 0;
+            font-family: 'Inter', sans-serif; font-size: 1.05em; font-weight: 700; color: var(--navy);
+            cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .quiz-option:hover, .quiz-option:focus-visible { border-color: var(--green); background: var(--bg-light); }
+        .quiz-option span.sub { display: block; font-weight: 400; font-size: 0.85em; color: var(--text-light); margin-top: 4px; }
+        .quiz-back { background: none; border: none; color: var(--text-light); font-weight: 700; cursor: pointer; margin-bottom: 20px; padding: 0; font-size: 0.9em; }
+        .quiz-result { text-align: center; }
+        .quiz-result-badge { display: inline-block; background: var(--gold); color: var(--navy); padding: 6px 16px; font-weight: 800; text-transform: uppercase; font-size: 0.8em; letter-spacing: 0.6px; margin-bottom: 16px; }
+        .quiz-result h2 { font-size: 2em; color: var(--navy); margin-bottom: 14px; }
+        .quiz-result p.desc { color: var(--text-light); max-width: 540px; margin: 0 auto 28px; font-size: 1.05em; }
+        .quiz-result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Ir ao contido principal</a>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-dots">
+                <span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span>
+            </div>
+            <img src="logo-transparent.png" alt="MoveMentes" class="preloader-logo" id="preloader-logo">
+            <p class="preloader-tag" id="preloader-tag">Corpo activo, mente feliz</p>
+        </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="color-strip"></div>
+    <nav class="site-nav">
+        <div class="nav-glass-bg"></div>
+        <div class="container">
+            <a href="index.html" class="logo-link"><img src="logo-transparent.png" alt="MoveMentes" class="nav-logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-burger" aria-label="Menú">☰</label>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                <a href="index.html#actividades" class="nav-dropdown-trigger">Actividades</a>
+                <div class="nav-dropdown-panel">
+                    <a href="psicomotricidad.html">Psicomotricidade</a>
+                    <a href="futbol.html">Fútbol Sala</a>
+                    <a href="futbol-campo.html">Fútbol Campo</a>
+                    <a href="tenis.html">Tenis de Mesa</a>
+                    <a href="baloncesto.html">Baloncesto</a>
+                    <a href="necesidades-especiales.html">Necesidades Especiais</a>
+                    <a href="mayores.html">Maiores</a>
+                    <a href="campamentos.html">Campamentos</a>
+                </div>
+            </div>
+                <a href="colegios.html">Colegios e ANPA</a>
+                <a href="instituciones.html">Institucións</a>
+                <a href="index.html#contacto" class="nav-cta">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content"></div>
+    <div class="hero hero-purple">
+        <div class="container hero-inner">
+            <div class="hero-tag">Test rápido · 30 segundos</div>
+            <h1>Atopa a túa actividade</h1>
+            <p class="hero-subtitle">Responde 2 preguntas e dicimosche que actividade de MoveMentes encaixa mellor.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="page-section">
+            <div class="quiz-wrap">
+
+                <div class="quiz-progress" id="quiz-progress">
+                    <div class="quiz-progress-seg" data-seg="1"></div>
+                    <div class="quiz-progress-seg" data-seg="2"></div>
+                </div>
+
+                <div class="quiz-step is-active" data-step="1">
+                    <p class="quiz-question">¿Para quen buscas unha actividade?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-answer="peque">Neno/a de 3 a 6 anos<span class="sub">Descubrimento e movemento a través do xogo</span></button>
+                        <button class="quiz-option" data-answer="medio">Neno/a de 7 a 12 anos<span class="sub">Idade escolar</span></button>
+                        <button class="quiz-option" data-answer="moz">Mozo/a de 13 anos ou máis<span class="sub"></span></button>
+                        <button class="quiz-option" data-answer="adulto">Persoa adulta ou maior<span class="sub"></span></button>
+                        <button class="quiz-option" data-answer="especial">Precisa un apoio ou adaptación especial<span class="sub"></span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" data-step="2">
+                    <button class="quiz-back" id="quiz-back">← Volver</button>
+                    <p class="quiz-question">¿Que lle gusta máis?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-answer="libre">Moverse e xogar de forma variada<span class="sub">Coordinación, equilibrio e diversión</span></button>
+                        <button class="quiz-option" data-answer="equipo">Un deporte en equipo<span class="sub">Compañeirismo e traballo colectivo</span></button>
+                        <button class="quiz-option" data-answer="individual">Un deporte individual e de precisión<span class="sub">Concentración e reflexos</span></button>
+                        <button class="quiz-option" data-answer="vacacions">Actividade intensiva en vacacións<span class="sub">Ao aire libre, en grupo</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" data-step="result">
+                    <div class="quiz-result">
+                        <span class="quiz-result-badge">A túa recomendación</span>
+                        <h2 id="result-title">—</h2>
+                        <p class="desc" id="result-desc">—</p>
+                        <div class="quiz-result-actions">
+                            <a href="#" id="result-link" class="btn btn-primary">Ver a actividade</a>
+                            <a href="#" id="result-wa" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 Pide información</a>
+                        </div>
+                        <p style="margin-top:24px;"><button class="quiz-back" id="quiz-restart">↺ Volver a empezar</button> &nbsp;·&nbsp; <a href="modalidades.html" style="color: var(--text-light); font-weight: 700;">Ver todas as actividades</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <img loading="lazy" decoding="async" src="logo-transparent.png" alt="MoveMentes">
+        <p>&copy; 2026 MoveMentes</p>
+        <p><a href="index.html">← Volver a inicio</a></p>
+    </footer>
+
+    <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+
+    <script src="main.js?v=14"></script>
+    <script>
+    (function () {
+        var RESULTS = {
+            mayores: { title: 'Actividade e Benestar', desc: 'Sesións de movemento, mobilidade e benestar pensadas para persoas adultas e maiores.', url: 'mayores.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20Actividade%20e%20Benestar' },
+            especial: { title: 'Deporte e Psicomotricidade Adaptada', desc: 'Proposta individualizada, adaptada ás necesidades de cada persoa, tras unha conversa inicial coa familia.', url: 'necesidades-especiales.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20a%20actividade%20adaptada' },
+            psicomotricidade: { title: 'MoveMentes · Psicomotricidade', desc: 'A actividade principal de MoveMentes: psicomotricidade e movemento integral que une corpo, mente e emocións.', url: 'psicomotricidad.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20MoveMentes' },
+            futbol: { title: 'Fútbol Sala', desc: 'Técnica individual e traballo en equipo, nun ambiente seguro e motivador.', url: 'futbol.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20F%C3%BAtbol%20Sala' },
+            tenis: { title: 'Tenis de Mesa', desc: 'Reflexos, precisión e concentración, nun deporte individual moi completo.', url: 'tenis.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20Tenis%20de%20Mesa' },
+            campamentos: { title: 'Campamentos de Vacacións', desc: 'Intensivo de actividade e xogo ao aire libre, en calquera etapa vacacional.', url: 'campamentos.html', wa: 'Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20Campamentos' }
+        };
+
+        var steps = document.querySelectorAll('.quiz-step');
+        var segs = document.querySelectorAll('.quiz-progress-seg');
+        var firstAnswer = null;
+
+        function showStep(name, segCount) {
+            steps.forEach(function (s) { s.classList.toggle('is-active', s.dataset.step === name); });
+            segs.forEach(function (seg, i) { seg.classList.toggle('done', i < segCount); });
+            window.scrollTo({ top: document.querySelector('.quiz-wrap').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function showResult(key) {
+            var r = RESULTS[key];
+            document.getElementById('result-title').textContent = r.title;
+            document.getElementById('result-desc').textContent = r.desc;
+            document.getElementById('result-link').href = r.url;
+            document.getElementById('result-wa').href = 'https://wa.me/34678345540?text=' + r.wa;
+            showStep('result', 2);
+        }
+
+        document.querySelectorAll('[data-step="1"] .quiz-option').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var a = btn.dataset.answer;
+                if (a === 'adulto') { showResult('mayores'); return; }
+                if (a === 'especial') { showResult('especial'); return; }
+                firstAnswer = a;
+                showStep('2', 1);
+            });
+        });
+
+        document.querySelectorAll('[data-step="2"] .quiz-option').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var a = btn.dataset.answer;
+                var key = 'psicomotricidade';
+                if (a === 'libre') key = 'psicomotricidade';
+                else if (a === 'equipo') key = 'futbol';
+                else if (a === 'individual') key = 'tenis';
+                else if (a === 'vacacions') key = 'campamentos';
+                showResult(key);
+            });
+        });
+
+        document.getElementById('quiz-back').addEventListener('click', function () { showStep('1', 0); });
+        document.getElementById('quiz-restart').addEventListener('click', function () { showStep('1', 0); });
+    })();
+    </script>
+</body>
+</html>
