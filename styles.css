@@ -19,9 +19,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 :root {
-    /* Paleta viva e natural — mesma saturación/luminosidade en todos os acentos para que combinen entre si */
-    --navy: #16324F;
-    --navy-light: #1F4766;
+    /* Estilo Nike: branco/negro/gris estrictos, cor de marca so como acento puntual */
+    --navy: #000000;
+    --navy-light: #1a1a1a;
     --green: #3FAE68;
     --green-dark: #237C47;
     --green-soft: #4FBD7D;
@@ -31,9 +31,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     --purple: #8B6FD9;
     --pink: #E8608A;
     --gold: #F0B429;
-    --text-dark: #22303C;
-    --text-light: #5B6B77;
-    --bg-light: #F6F9F6;
+    --text-dark: #111111;
+    --text-light: #707072;
+    --bg-light: #F5F5F5;
     --white: #FFFFFF;
     --border: #E4E8E6;
 }
@@ -161,14 +161,45 @@ nav.site-nav .nav-links a {
     color: var(--text-dark);
     text-decoration: none;
     margin: 0 2px;
-    border-radius: 6px;
+    border-radius: 0;
     transition: all 0.2s;
-    font-weight: 600;
-    font-size: 0.92em;
+    font-weight: 700;
+    font-size: 0.82em;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
 nav.site-nav .nav-links a:hover { background: var(--bg-light); color: var(--green-dark); }
 nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); }
+
+/* MEGA-MENU — Actividades */
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-panel {
+    position: absolute; top: 100%; left: 50%;
+    transform: translate(-50%, 8px);
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    padding: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 4px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 300;
+}
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel {
+    opacity: 1; visibility: visible; transform: translate(-50%, 0);
+}
+.nav-dropdown-panel a {
+    padding: 8px 6px !important; margin: 0 !important; border-radius: 0 !important;
+    font-size: 0.85em !important; white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .nav-dropdown-panel { display: none; }
+}
 
 .nav-toggle { display: none; }
 .nav-burger { display: none; }
@@ -176,7 +207,7 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 /* HERO — animated colour-mesh background (all brand colours, not a flat 2-tone gradient) */
 /* HERO — estilo editorial plano (foto a toda sangre + bloque de texto), inspirado en nike.com */
 .hero {
-    background: var(--green-soft);
+    background: var(--navy);
     color: var(--white);
     padding: 120px 24px 56px;
     text-align: left;
@@ -185,10 +216,11 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
     min-height: 420px;
     display: flex;
     align-items: flex-end;
+    border-top: 5px solid var(--green);
 }
-.hero.hero-orange { background: var(--orange); }
-.hero.hero-purple { background: var(--purple); }
-.hero.hero-blue { background: var(--lightblue); }
+.hero.hero-orange { border-top-color: var(--orange); }
+.hero.hero-purple { border-top-color: var(--purple); }
+.hero.hero-blue { border-top-color: var(--lightblue); }
 
 @media (prefers-reduced-motion: reduce) {
     .hero { animation: none; }
@@ -217,7 +249,7 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
     width: 100%;
     max-height: 420px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 0;
     box-shadow: none;
     display: block;
 }
@@ -234,26 +266,27 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 /* BUTTONS */
 .btn {
     display: inline-block;
-    padding: 15px 36px;
-    border-radius: 50px;
+    padding: 15px 34px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 700;
     margin: 8px 6px;
-    transition: all 0.25s ease;
-    border: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
     cursor: pointer;
-    font-size: 1em;
-    letter-spacing: 0.2px;
+    font-size: 0.92em;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
 
-.btn-primary { background: var(--gold); color: var(--navy); box-shadow: none; }
-.btn-primary:hover { background: #D99F1E; }
+.btn-primary { background: var(--navy); color: var(--white); border-color: var(--navy); box-shadow: none; }
+.btn-primary:hover { background: var(--white); color: var(--navy); }
 
-.btn-whatsapp { background: #25D366; color: var(--white); box-shadow: none; }
-.btn-whatsapp:hover { background: #1FB859; }
+.btn-whatsapp { background: #25D366; color: var(--white); border-color: #25D366; box-shadow: none; }
+.btn-whatsapp:hover { background: var(--white); color: #25D366; }
 
-.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.8); }
-.btn-outline:hover { background: rgba(255,255,255,0.12); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+.btn-outline:hover { background: var(--white); color: var(--navy); }
 
 .btn-outline-dark { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
 .btn-outline-dark:hover { background: var(--navy); color: var(--white); }
@@ -302,7 +335,7 @@ p.section-subtitle { font-size: 1.05em; color: var(--text-light); margin-bottom:
 .card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 0;
     padding: 28px;
     box-shadow: none;
     transition: border-color 0.25s ease, transform 0.25s ease;
@@ -322,7 +355,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 
 .profile-photo-frame {
     width: 320px; max-width: 100%; height: 430px;
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
     flex: 0 0 auto;
     margin: 0 auto;
@@ -362,7 +395,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
     background: var(--white);
     border: 1px solid var(--border);
     border-top: 4px solid transparent;
-    border-radius: 4px;
+    border-radius: 0;
     padding: 32px 28px 28px;
     box-shadow: none;
     transition: border-color 0.3s ease, transform 0.3s ease;
@@ -385,7 +418,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 .credentials-box {
     background: var(--bg-light);
     padding: 28px;
-    border-radius: 4px;
+    border-radius: 0;
     margin-top: 24px;
     border: 1px solid var(--border);
     box-shadow: none;
@@ -424,7 +457,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 .chip:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
 
 /* PHOTO CARDS */
-.photo-card { border-radius: 4px; overflow: hidden; border: 1px solid var(--border); box-shadow: none; transition: border-color 0.3s ease, transform 0.3s ease; text-decoration: none; display: block; color: inherit; background: var(--white); }
+.photo-card { border-radius: 0; overflow: hidden; border: 1px solid var(--border); box-shadow: none; transition: border-color 0.3s ease, transform 0.3s ease; text-decoration: none; display: block; color: inherit; background: var(--white); }
 .photo-card:hover { transform: translateY(-4px); border-color: var(--navy); }
 .photo-card img { width: 100%; height: 190px; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .photo-card:hover img { transform: scale(1.06); }
@@ -436,7 +469,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
     display: inline-block;
     color: var(--white);
     padding: 5px 13px;
-    border-radius: 3px;
+    border-radius: 0;
     font-size: 0.74em;
     font-weight: 700;
     margin-bottom: 12px;
@@ -458,7 +491,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
     text-decoration: none;
     color: inherit;
     background: var(--green-dark);
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: none;
     transition: transform 0.3s ease;
@@ -496,7 +529,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
     background: var(--orange);
     color: var(--navy);
     padding: 48px 32px;
-    border-radius: 4px;
+    border-radius: 0;
     text-align: center;
     margin: 20px auto;
     position: relative;
@@ -506,7 +539,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 .event-banner p, .event-banner .event-tag { position: relative; }
 .event-banner .event-tag {
     display: inline-block; background: rgba(22,50,79,0.14); color: var(--navy);
-    padding: 7px 16px; border-radius: 3px; font-weight: 700; font-size: 0.8em; margin-bottom: 16px;
+    padding: 7px 16px; border-radius: 0; font-weight: 700; font-size: 0.8em; margin-bottom: 16px;
     text-transform: uppercase; letter-spacing: 0.6px;
 }
 
@@ -653,10 +686,10 @@ footer.site-footer a:hover { text-decoration: underline; }
         margin: 0;
         text-align: center;
         padding: 18px 24px;
-        font-size: 1.5em;
+        font-size: 1.3em;
         width: 84%;
         max-width: 340px;
-        border-radius: 16px;
+        border-radius: 0;
     }
     .nav-toggle:checked ~ .nav-links {
         opacity: 1;
