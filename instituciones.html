@@ -8,10 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
-    <div class="preloader" id="preloader"><img src="logo-transparent.png" alt="MoveMentes"></div>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-dots">
+                <span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span>
+            </div>
+            <img src="logo-transparent.png" alt="MoveMentes" class="preloader-logo" id="preloader-logo">
+            <p class="preloader-tag" id="preloader-tag">Corpo activo, mente feliz</p>
+            <p class="preloader-skip">Toca para continuar</p>
+        </div>
+    </div>
     <div class="scroll-progress" id="scroll-progress"></div>
     <div class="color-strip"></div>
     <nav class="site-nav">
@@ -33,7 +43,7 @@
         <div class="container">
             <div class="hero-tag">Institucións e empresas</div>
             <h1>Leva MoveMentes á túa institución</h1>
-            <p class="hero-subtitle">Clases de movemento e benestar para persoas adultas e maiores: residencias, centros de día, concellos, asociacións e empresas.</p>
+            <p class="hero-subtitle">Clases de movemento e benestar para persoas adultas e maiores, e colaboracións deportivas: residencias, centros de día, concellos, asociacións, empresas, complexos deportivos e clubs.</p>
             <a href="https://wa.me/34678345540?text=Ol%C3%A1%2C%20escribo%20dunha%20instituci%C3%B3n%20e%20quero%20informaci%C3%B3n%20sobre%20clases%20para%20adultos" class="btn btn-whatsapp" target="_blank" rel="noopener">Solicita presuposto personalizado</a>
         </div>
     </div>
@@ -55,6 +65,8 @@
                 <div class="card"><h4>🏢 Residencias e centros de día</h4><p>Sesións de movemento e benestar para persoas maiores.</p></div>
                 <div class="card"><h4>🏛️ Concellos e asociacións</h4><p>Programas de actividade física para a comunidade.</p></div>
                 <div class="card"><h4>💼 Empresas</h4><p>Benestar e movemento para equipos de traballo.</p></div>
+                <div class="card"><h4>🏟️ Complexos deportivos</h4><p>Programas complementarios de psicomotricidade e multideporte para o teu complexo.</p></div>
+                <div class="card"><h4>🤝 Clubs deportivos</h4><p>Colaboración en escolas deportivas e actividades de base.</p></div>
             </div>
         </section>
 
@@ -93,6 +105,6 @@
 
     <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
 
-    <script src="main.js?v=4"></script>
+    <script src="main.js?v=5"></script>
 </body>
 </html>

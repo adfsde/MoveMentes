@@ -3,12 +3,34 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
-        /* PRELOADER */
+        /* PRELOADER / WELCOME ANIMATION */
         var preloader = document.getElementById('preloader');
+        var popupReadyAt = 900; // ms from now before the entry popup may show; raised once welcome anim runs
         if (preloader) {
-            var hidePreloader = function () { preloader.classList.add('is-hidden'); };
-            window.addEventListener('load', function () { setTimeout(hidePreloader, 350); });
-            setTimeout(hidePreloader, 2200); // safety fallback
+            var hidePreloader = function () {
+                if (preloader.classList.contains('is-hidden')) return;
+                preloader.classList.add('is-hidden');
+                openEntryPopup();
+            };
+            preloader.addEventListener('click', hidePreloader);
+
+            if (window.gsap && !reduceMotion) {
+                var tl = gsap.timeline({ onComplete: hidePreloader });
+                tl.set('#preloader-logo', { scale: 0.25, rotation: -14, opacity: 0 })
+                  .set('.preloader-dot', { scale: 0, opacity: 0 })
+                  .set('#preloader-tag', { opacity: 0, y: 14 })
+                  .to('#preloader-logo', { scale: 1, rotation: 0, opacity: 1, duration: 1.1, ease: 'elastic.out(1, 0.55)' })
+                  .to('.preloader-dot', { scale: 1, opacity: 1, duration: 0.45, stagger: 0.07, ease: 'back.out(2.4)' }, '-=0.55')
+                  .to('#preloader-tag', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+                  .to('.preloader-dot', { y: '-=14', duration: 0.5, stagger: { each: 0.06, yoyo: true, repeat: 1 } }, '-=0.1')
+                  .to({}, { duration: 0.55 })
+                  .to('#preloader', { opacity: 0, duration: 0.55, ease: 'power1.inOut' });
+                popupReadyAt = 400;
+            } else {
+                document.body.classList.add('no-gsap');
+                window.addEventListener('load', function () { setTimeout(hidePreloader, 600); });
+            }
+            setTimeout(hidePreloader, 6000); // absolute safety net
         }
 
         /* SCROLL REVEAL */
@@ -40,22 +62,19 @@
             }
         }, { passive: true });
 
-        /* ENTRY POPUP */
+        /* ENTRY POPUP — shows on every visit (short-term Narón enrollment push) */
         var popup = document.getElementById('entry-popup');
+        function openEntryPopup() {
+            if (!popup) return;
+            setTimeout(function () { popup.classList.add('is-open'); }, popupReadyAt);
+        }
         if (popup) {
-            var alreadyShown = false;
-            try { alreadyShown = sessionStorage.getItem('mm-popup-shown') === '1'; } catch (e) {}
-            if (!alreadyShown) {
-                setTimeout(function () {
-                    popup.classList.add('is-open');
-                    try { sessionStorage.setItem('mm-popup-shown', '1'); } catch (e) {}
-                }, 1400);
-            }
             var closePopup = function () { popup.classList.remove('is-open'); };
             var closeBtn = popup.querySelector('.popup-close');
             if (closeBtn) closeBtn.addEventListener('click', closePopup);
             popup.addEventListener('click', function (e) { if (e.target === popup) closePopup(); });
             document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+            if (!preloader) openEntryPopup(); // no preloader on this page: show on its own timer
         }
 
         if (reduceMotion) return; // skip decorative motion below for users who asked for less
