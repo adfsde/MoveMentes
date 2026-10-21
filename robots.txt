@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /autorizacion.html
+
+Sitemap: https://www.movementes.es/sitemap.xml
