@@ -158,12 +158,12 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 /* HERO — animated colour-mesh background (all brand colours, not a flat 2-tone gradient) */
 .hero {
     background: linear-gradient(115deg,
-        var(--navy) 0%,
-        #3C7A58 18%,
-        #5CAD72 34%,
+        #2E93A8 0%,
+        var(--green) 18%,
+        #6FD98A 34%,
         var(--lightblue) 52%,
         var(--purple) 72%,
-        #C94F7C 88%,
+        #E8739E 88%,
         var(--orange) 100%);
     background-size: 260% 260%;
     animation: auroraShift 22s ease-in-out infinite;
