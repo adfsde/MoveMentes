@@ -172,6 +172,28 @@ nav.site-nav .nav-links a {
 nav.site-nav .nav-links a:hover { background: var(--bg-light); color: var(--green-dark); }
 nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); }
 
+/* QUIZ CTA — "Fai o test" */
+.quiz-cta {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: linear-gradient(135deg, #FFF6DF 0%, #FFEAC2 100%);
+    border: 2px solid var(--gold);
+    padding: 16px 24px; margin: 6px 0 20px;
+    text-decoration: none; border-radius: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.quiz-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(240,180,41,0.28); }
+.quiz-cta-balloon { font-size: 1.8em; display: inline-block; animation: balloonFloat 3s ease-in-out infinite; }
+@keyframes balloonFloat {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+.quiz-cta-text { color: var(--navy); font-size: 1.02em; font-weight: 500; }
+.quiz-cta-text strong { font-weight: 800; }
+.quiz-cta-arrow { font-size: 1.3em; color: var(--navy); font-weight: 800; transition: transform 0.25s ease; }
+.quiz-cta:hover .quiz-cta-arrow { transform: translateX(6px); }
+@media (prefers-reduced-motion: reduce) { .quiz-cta-balloon { animation: none; } }
+@media (max-width: 600px) { .quiz-cta { flex-wrap: wrap; } }
+
 /* MEGA-MENU — Actividades */
 .nav-dropdown { position: relative; display: inline-block; }
 .nav-dropdown-panel {
