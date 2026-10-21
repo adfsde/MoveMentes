@@ -16,14 +16,18 @@
 
             if (window.gsap && !reduceMotion) {
                 var tl = gsap.timeline({ onComplete: hidePreloader });
-                tl.set('#preloader-logo', { scale: 0.9, y: 10, opacity: 0 })
-                  .set('.preloader-dot', { scale: 0, opacity: 0 })
+                tl.set('#preloader-logo', { scale: 0.8, opacity: 0 })
+                  .set('.preloader-dots', { rotation: -40, opacity: 0 })
+                  .set('.preloader-dot', { scale: 0 })
                   .set('#preloader-tag', { opacity: 0, y: 8 })
-                  .to('#preloader-logo', { scale: 1, y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' })
-                  .to('.preloader-dot', { scale: 1, opacity: 1, duration: 0.3, stagger: 0.04, ease: 'power2.out' }, '-=0.3')
-                  .to('#preloader-tag', { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.15')
-                  .to({}, { duration: 0.3 })
-                  .to('#preloader', { opacity: 0, duration: 0.4, ease: 'power1.inOut' });
+                  .addLabel('start')
+                  .to('#preloader-logo', { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.6)' }, 'start')
+                  .to('.preloader-dots', { opacity: 1, duration: 0.25 }, 'start+=0.1')
+                  .to('.preloader-dot', { scale: 1, duration: 0.3, stagger: 0.04, ease: 'back.out(2)' }, 'start+=0.1')
+                  .to('.preloader-dots', { rotation: 320, duration: 1.5, ease: 'power1.inOut' }, 'start+=0.1')
+                  .to('#preloader-tag', { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 'start+=0.35')
+                  .to('.preloader-dot', { opacity: 0, duration: 0.3 }, 'start+=1.4')
+                  .to('#preloader', { opacity: 0, duration: 0.4, ease: 'power1.inOut' }, 'start+=1.65');
                 popupReadyAt = 400;
             } else {
                 document.body.classList.add('no-gsap');

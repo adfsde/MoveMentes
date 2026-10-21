@@ -183,7 +183,7 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 @keyframes objetivoBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
 .objetivo-mark { display: block; font-family: 'Anton', sans-serif; font-size: 4.2em; line-height: 0.6; color: var(--green); opacity: 0.3; margin-bottom: 4px; }
 .objetivo-text { font-size: 1.2em; color: var(--navy); line-height: 1.7; }
-.objetivo-text strong { color: var(--green-dark); }
+.objetivo-text strong { color: inherit; font-weight: 800; }
 @media (prefers-reduced-motion: reduce) { .objetivo-icon { animation: none; } }
 
 /* QUIZ CTA — "Fai o test" */
