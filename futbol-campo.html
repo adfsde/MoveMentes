@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol Campo | MoveMentes</title>
+    <meta name="description" content="Fútbol campo con MoveMentes: técnica, táctica e espírito de equipo para nenos e nenas en Galicia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-dots">
+                <span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span>
+            </div>
+            <img src="logo-transparent.png" alt="MoveMentes" class="preloader-logo" id="preloader-logo">
+            <p class="preloader-tag" id="preloader-tag">Corpo activo, mente feliz</p>
+            <p class="preloader-skip">Toca para continuar</p>
+        </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="color-strip"></div>
+    <nav class="site-nav">
+        <div class="nav-glass-bg"></div>
+        <div class="container">
+            <a href="index.html" class="logo-link"><img src="logo-transparent.png" alt="MoveMentes" class="nav-logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-burger" aria-label="Menú">☰</label>
+            <div class="nav-links">
+                <a href="index.html#actividades">Actividades</a>
+                <a href="colegios.html">Colegios e ANPA</a>
+                <a href="instituciones.html">Institucións</a>
+                <a href="index.html#contacto" class="nav-cta">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero hero-orange">
+        <div class="hero-bg-photo" style="background-image: url('foto-futbol-campo.jpg');"></div>
+        <div class="container hero-inner">
+            <div class="hero-tag">6+ anos</div>
+            <h1>⚽ Fútbol Campo</h1>
+            <p class="hero-subtitle">Técnica, táctica e espírito de equipo ao aire libre.</p>
+            <a href="https://wa.me/34678345540?text=Ol%C3%A1%2C%20quero%20informaci%C3%B3n%20sobre%20F%C3%BAtbol%20Campo" class="btn btn-whatsapp" target="_blank" rel="noopener">Solicita información</a>
+        </div>
+    </div>
+
+    <div class="content-photo-wrap container">
+        <img src="foto-futbol-campo.jpg" alt="Nenos xogando a fútbol campo" class="content-photo">
+    </div>
+
+    <div class="container">
+        <section class="page-section">
+            <h2 class="section-title">Fútbol campo</h2>
+            <p style="font-size: 1.05em; color: var(--text-light); max-width: 760px;">Fútbol tradicional ao aire libre, con máis espazo para correr, pasar e construír xogadas en equipo. Desenvolve resistencia, visión de xogo e compañeirismo. Impartido por Ángel García Lema, con <strong>máis de 20 anos de experiencia</strong> en educación e deporte.</p>
+        </section>
+
+        <section class="page-section alt">
+            <h2 class="section-title">O que aprenden</h2>
+            <div class="card-grid">
+                <div class="card"><h4>⚽ Técnica</h4><p>Control de balón, pase, tiro e condución.</p></div>
+                <div class="card"><h4>🎯 Táctica</h4><p>Posicionamento e visión de xogo en espazos amplos.</p></div>
+                <div class="card"><h4>👥 Equipo</h4><p>Compañeirismo, comunicación e confianza mutua.</p></div>
+                <div class="card"><h4>💪 Resistencia</h4><p>Condición física e resistencia aeróbica.</p></div>
+                <div class="card"><h4>🧠 Toma de decisións</h4><p>Decisións rápidas baixo presión.</p></div>
+                <div class="card"><h4>😊 Diversión</h4><p>Paixón e entusiasmo polo deporte ao aire libre.</p></div>
+            </div>
+        </section>
+
+        <section class="page-section alt" id="contacto">
+            <h2 class="section-title">Solicita información</h2>
+            <p class="section-subtitle">Escríbenos e axustamos horarios e grupo á túa dispoñibilidade.</p>
+            <div style="margin-bottom: 30px;">
+                <a href="https://wa.me/34678345540" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+                <a href="mailto:angelgarcialema@gmail.com" class="btn btn-outline-dark">📧 Email</a>
+            </div>
+            <form class="contact-form" action="mailto:angelgarcialema@gmail.com" method="post" enctype="text/plain" style="margin-left: 0;">
+                <input type="text" name="Nome" placeholder="O teu nome" required>
+                <input type="text" name="Contacto" placeholder="Email ou teléfono" required>
+                <textarea name="Mensaxe" placeholder="Cóntanos sobre o/a teu/túa fillo/a..."></textarea>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo-transparent.png" alt="MoveMentes">
+        <p>&copy; 2026 MoveMentes</p>
+        <p><a href="index.html">← Volver a inicio</a></p>
+    </footer>
+
+    <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+
+    <script src="main.js?v=6"></script>
+</body>
+</html>
