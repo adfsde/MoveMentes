@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorización de imaxe e ficha de alumno/a | MoveMentes</title>
+    <meta name="description" content="Formulario de inscrición e autorización de imaxe para as actividades de MoveMentes.">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css?v=8">
+    <style>
+        .form-section { max-width: 620px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 6px; font-size: 0.96em; }
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group select {
+            width: 100%; padding: 13px 14px; border: 2px solid var(--border); border-radius: 8px;
+            font-size: 1em; font-family: inherit; color: var(--text-dark); background: var(--white);
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--green); }
+        .consent-box {
+            background: var(--bg-light); border: 2px solid var(--border); border-radius: 14px;
+            padding: 20px 22px; margin-bottom: 20px;
+        }
+        .consent-box p.consent-text { margin-bottom: 14px; color: var(--text-dark); font-size: 0.97em; }
+        .radio-row { display: flex; gap: 24px; }
+        .radio-option { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--navy); cursor: pointer; }
+        .radio-option input { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
+        .form-note-box {
+            background: #EEF8FC; border-left: 4px solid var(--lightblue); border-radius: 8px;
+            padding: 16px 18px; margin: 30px 0; font-size: 0.92em; color: var(--text-dark);
+        }
+        .required-mark { color: var(--orange); }
+        .wa-submit-btn { font-size: 1.05em; padding: 16px 20px; }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-dots">
+                <span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span>
+            </div>
+            <img src="logo-transparent.png" alt="MoveMentes" class="preloader-logo" id="preloader-logo">
+            <p class="preloader-tag" id="preloader-tag">Corpo activo, mente feliz</p>
+            <p class="preloader-skip">Toca para continuar</p>
+        </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="color-strip"></div>
+    <nav class="site-nav">
+        <div class="nav-glass-bg"></div>
+        <div class="container">
+            <a href="index.html" class="logo-link"><img src="logo-transparent.png" alt="MoveMentes" class="nav-logo"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-burger" aria-label="Menú">☰</label>
+            <div class="nav-links">
+                <a href="index.html#actividades">Actividades</a>
+                <a href="colegios.html">Colegios e ANPA</a>
+                <a href="instituciones.html">Institucións</a>
+                <a href="index.html#contacto" class="nav-cta">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero hero-blue">
+        <div class="container">
+            <div class="hero-tag">Ficha de inscrición</div>
+            <h1>Autorización de imaxe e ficha do alumno/a</h1>
+            <p class="hero-subtitle">Cubre este formulario cos datos do/a neno/a e envíanolo por WhatsApp cun só clic. Tárdase menos de 2 minutos.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="page-section">
+            <div class="form-section">
+                <form id="form-autorizacion">
+                    <h2 class="section-title" style="font-size: 1.3em;">Datos do/a alumno/a</h2>
+                    <div class="form-group">
+                        <label for="nome-alumno">Nome e apelidos do/a neno/a <span class="required-mark">*</span></label>
+                        <input type="text" id="nome-alumno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade-alumno">Idade</label>
+                        <input type="text" id="idade-alumno" placeholder="Ex: 7 anos">
+                    </div>
+                    <div class="form-group">
+                        <label for="actividade">Actividade na que participa <span class="required-mark">*</span></label>
+                        <select id="actividade" required>
+                            <option value="">Selecciona unha actividade</option>
+                            <option>MoveMentes (Psicomotricidade)</option>
+                            <option>Fútbol Sala</option>
+                            <option>Fútbol Campo</option>
+                            <option>Tenis de Mesa</option>
+                            <option>Deporte e Psicomotricidade Adaptada</option>
+                            <option>Campamentos de Vacacións</option>
+                            <option>Outra</option>
+                        </select>
+                    </div>
+
+                    <h2 class="section-title" style="font-size: 1.3em; margin-top: 36px;">Datos do pai/nai ou titor/a legal</h2>
+                    <div class="form-group">
+                        <label for="nome-titor">Nome e apelidos <span class="required-mark">*</span></label>
+                        <input type="text" id="nome-titor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono-titor">Teléfono de contacto <span class="required-mark">*</span></label>
+                        <input type="tel" id="telefono-titor" required>
+                    </div>
+
+                    <h2 class="section-title" style="font-size: 1.3em; margin-top: 36px;">Autorización de imaxe</h2>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo a que se realicen <strong>fotografías e/ou vídeos</strong> do/a meu/miña fillo/a durante as actividades de MoveMentes nas que participa.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-fotos" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-fotos" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo o <strong>uso desas fotografías e/ou vídeos nas redes sociais e na páxina web de MoveMentes</strong> (Instagram, Facebook, WhatsApp, www.movementes.es), con fins exclusivamente divulgativos da actividade.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-redes" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-redes" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data-firma">Data</label>
+                        <input type="date" id="data-firma">
+                    </div>
+                    <div class="form-group">
+                        <label for="nome-firma">Nome completo do/a sinante, como confirmación <span class="required-mark">*</span></label>
+                        <input type="text" id="nome-firma" placeholder="Escribe o teu nome e apelidos" required>
+                    </div>
+
+                    <div class="form-note-box">
+                        🔒 Esta autorización pódese retirar en calquera momento, sen necesidade de xustificación, escribindo por WhatsApp ou email a MoveMentes. Os datos facilitados úsanse unicamente para a xestión interna da actividade e non se ceden a terceiros.
+                    </div>
+
+                    <button type="submit" class="btn btn-whatsapp wa-submit-btn">💬 Enviar por WhatsApp a MoveMentes</button>
+                    <p class="contact-form-note" style="text-align: center; margin-top: 14px; opacity: 0.6;">Ao premer "Enviar" abrirase WhatsApp co formulario xa redactado, listo para enviar.</p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo-transparent.png" alt="MoveMentes">
+        <p>&copy; 2026 MoveMentes</p>
+        <p><a href="index.html">← Volver a inicio</a></p>
+    </footer>
+
+    <a href="https://wa.me/34678345540" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">💬</a>
+
+    <script src="main.js?v=8"></script>
+    <script>
+        (function () {
+            var dateInput = document.getElementById('data-firma');
+            if (dateInput) {
+                var today = new Date();
+                var iso = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+                dateInput.value = iso;
+            }
+
+            var form = document.getElementById('form-autorizacion');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var nomeAlumno = document.getElementById('nome-alumno').value.trim();
+                var idade = document.getElementById('idade-alumno').value.trim();
+                var actividade = document.getElementById('actividade').value;
+                var nomeTitor = document.getElementById('nome-titor').value.trim();
+                var telefono = document.getElementById('telefono-titor').value.trim();
+                var consentFotos = document.querySelector('input[name="consent-fotos"]:checked');
+                var consentRedes = document.querySelector('input[name="consent-redes"]:checked');
+                var data = document.getElementById('data-firma').value;
+                var nomeFirma = document.getElementById('nome-firma').value.trim();
+
+                if (!nomeAlumno || !actividade || !nomeTitor || !telefono || !consentFotos || !consentRedes || !nomeFirma) {
+                    alert('Por favor, completa todos os campos obrigatorios (*) antes de enviar.');
+                    return;
+                }
+
+                var lines = [
+                    '📋 *FICHA DE INSCRICIÓN — MoveMentes*',
+                    '',
+                    '*Alumno/a:* ' + nomeAlumno,
+                    idade ? ('*Idade:* ' + idade) : null,
+                    '*Actividade:* ' + actividade,
+                    '',
+                    '*Pai/Nai/Titor:* ' + nomeTitor,
+                    '*Teléfono:* ' + telefono,
+                    '',
+                    '*Autorizo fotos/vídeos durante as actividades:* ' + consentFotos.value,
+                    '*Autorizo o uso en redes sociais e web:* ' + consentRedes.value,
+                    '',
+                    '*Data:* ' + data,
+                    '*Sinatura (nome de confirmación):* ' + nomeFirma
+                ].filter(Boolean);
+
+                var text = encodeURIComponent(lines.join('\n'));
+                window.open('https://wa.me/34678345540?text=' + text, '_blank', 'noopener');
+            });
+        })();
+    </script>
+</body>
+</html>
