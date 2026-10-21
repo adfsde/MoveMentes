@@ -19,9 +19,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 :root {
-    /* Estilo Nike: branco/negro/gris estrictos, cor de marca so como acento puntual */
-    --navy: #000000;
-    --navy-light: #1a1a1a;
+    /* Estrutura Nike (branco, tipografia forte, grid limpo) + paleta MoveMentes clara e viva, sen negro nin fondos escuros */
+    --navy: #16324F;
+    --navy-light: #1F4766;
     --green: #3FAE68;
     --green-dark: #237C47;
     --green-soft: #4FBD7D;
@@ -31,8 +31,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     --purple: #8B6FD9;
     --pink: #E8608A;
     --gold: #F0B429;
-    --text-dark: #111111;
-    --text-light: #707072;
+    --text-dark: #1A2B38;
+    --text-light: #5B6B77;
     --bg-light: #F5F5F5;
     --white: #FFFFFF;
     --border: #E4E8E6;
@@ -207,7 +207,7 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 /* HERO — animated colour-mesh background (all brand colours, not a flat 2-tone gradient) */
 /* HERO — estilo editorial plano (foto a toda sangre + bloque de texto), inspirado en nike.com */
 .hero {
-    background: var(--navy);
+    background: var(--green);
     color: var(--white);
     padding: 120px 24px 56px;
     text-align: left;
@@ -216,11 +216,10 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
     min-height: 420px;
     display: flex;
     align-items: flex-end;
-    border-top: 5px solid var(--green);
 }
-.hero.hero-orange { border-top-color: var(--orange); }
-.hero.hero-purple { border-top-color: var(--purple); }
-.hero.hero-blue { border-top-color: var(--lightblue); }
+.hero.hero-orange { background: var(--orange); }
+.hero.hero-purple { background: var(--purple); }
+.hero.hero-blue { background: var(--lightblue); }
 
 @media (prefers-reduced-motion: reduce) {
     .hero { animation: none; }
@@ -257,9 +256,9 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 
 .hero-logo { max-width: 340px; width: 70%; height: auto; margin: 0 0 20px; display: block; filter: none; }
 
-.hero h1 { font-size: 2.8em; margin-bottom: 14px; line-height: 1.02; }
-.hero .hero-subtitle { font-size: 1.1em; max-width: 560px; margin: 0 0 26px; opacity: 0.92; line-height: 1.6; font-weight: 400; }
-.hero-tag { display: block; text-transform: uppercase; letter-spacing: 1.6px; font-size: 0.8em; font-weight: 700; margin-bottom: 10px; opacity: 0.85; }
+.hero h1 { font-size: 2.8em; margin-bottom: 14px; line-height: 1.02; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+.hero .hero-subtitle { font-size: 1.1em; max-width: 560px; margin: 0 0 26px; opacity: 0.96; line-height: 1.6; font-weight: 400; text-shadow: 0 1px 12px rgba(0,0,0,0.4); }
+.hero-tag { display: block; text-transform: uppercase; letter-spacing: 1.6px; font-size: 0.8em; font-weight: 700; margin-bottom: 10px; opacity: 0.95; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
 
 .wave-divider { display: block; width: 100%; height: 60px; margin-top: -2px; }
 
@@ -279,8 +278,8 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
     text-transform: uppercase;
 }
 
-.btn-primary { background: var(--navy); color: var(--white); border-color: var(--navy); box-shadow: none; }
-.btn-primary:hover { background: var(--white); color: var(--navy); }
+.btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); box-shadow: none; }
+.btn-primary:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
 .btn-whatsapp { background: #25D366; color: var(--white); border-color: #25D366; box-shadow: none; }
 .btn-whatsapp:hover { background: var(--white); color: #25D366; }
@@ -545,7 +544,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 
 /* CONTACT */
 .cta-section {
-    background: var(--navy);
+    background: var(--green-dark);
     color: var(--white); text-align: center; padding: 70px 20px;
 }
 .cta-section h2 { color: var(--white); margin-bottom: 16px; }
