@@ -3,18 +3,18 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    /* Paleta clara e natural — tons terrosos suaves, sen navy escuro nin cores "candy" saturadas */
+    /* Paleta viva e natural — mesma saturación/luminosidade en todos os acentos para que combinen entre si */
     --navy: #16324F;
     --navy-light: #1F4766;
-    --green: #4CAE68;
-    --green-dark: #2E7D46;
-    --green-soft: #6BBE86;
-    --green-pale: #A3DDB7;
-    --orange: #E2905A;
-    --lightblue: #6FB4D1;
-    --purple: #B49FD1;
-    --pink: #E5A0B0;
-    --gold: #E8B84B;
+    --green: #3FAE68;
+    --green-dark: #237C47;
+    --green-soft: #4FBD7D;
+    --green-pale: #86DDA8;
+    --orange: #F08A3C;
+    --lightblue: #2EA8C9;
+    --purple: #8B6FD9;
+    --pink: #E8608A;
+    --gold: #F0B429;
     --text-dark: #22303C;
     --text-light: #5B6B77;
     --bg-light: #F6F9F6;
