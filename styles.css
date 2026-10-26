@@ -590,6 +590,8 @@ a.card:hover { transform: translateY(-4px); border-color: var(--navy); }
 .pillar p { color: var(--text-light); font-size: 0.93em; }
 
 /* WHATSAPP EVENT / CTA BANNER */
+.event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 20px 0; }
+.event-grid .event-banner { margin: 0; }
 .event-banner {
     background: var(--orange);
     color: var(--navy);
