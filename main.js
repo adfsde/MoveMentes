@@ -65,7 +65,7 @@
             }
         }, { passive: true });
 
-        /* ENTRY POPUP — shows on every visit (short-term Narón/Teixeiro enrollment push) */
+        /* ENTRY POPUP — shows on every visit to promote a trial class */
         var popup = document.getElementById('entry-popup');
         function openEntryPopup() {
             if (!popup) return;
