@@ -301,17 +301,6 @@ nav.site-nav .nav-links a.nav-cta { font-weight: 700; color: var(--green-dark); 
 }
 .hero:not(:has(.hero-bg-photo))::after { display: none; }
 
-/* sharp banner photo used in-page for high-res photos */
-.content-photo {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
-    display: block;
-}
-.content-photo-wrap { margin-top: -56px; position: relative; z-index: 3; }
-
 .hero-logo { max-width: 340px; width: 70%; height: auto; margin: 0 0 20px; display: block; filter: none; }
 
 .hero h1 { font-size: 2.8em; margin-bottom: 14px; line-height: 1.02; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
