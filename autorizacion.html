@@ -28,7 +28,7 @@
             padding: 20px 22px; margin-bottom: 20px;
         }
         .consent-box p.consent-text { margin-bottom: 14px; color: var(--text-dark); font-size: 0.97em; }
-        .radio-row { display: flex; gap: 24px; }
+        .radio-row { display: flex; flex-wrap: wrap; gap: 24px; }
         .radio-option { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--navy); cursor: pointer; }
         .radio-option input { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
         .form-note-box {
@@ -100,7 +100,7 @@
         <div class="container">
             <div class="hero-tag">Ficha de inscrición</div>
             <h1>Autorización de imaxe e ficha do alumno/a</h1>
-            <p class="hero-subtitle">Cubre este formulario cos datos do/a neno/a e envíanolo por WhatsApp cun só clic. Tárdase menos de 2 minutos.</p>
+            <p class="hero-subtitle">Cubre os datos da actividade e escolle por separado se autorizas facer e publicar imaxes. Podes dicir que non sen afectar á participación.</p>
         </div>
     </div>
 
@@ -151,17 +151,51 @@
                         </div>
                     </div>
 
+                    <p class="consent-text" style="margin: 6px 0 22px;">A publicación é opcional e independente para cada canle. Se non autorizas facer fotografías ou vídeos, escolle «Non autorizo» en todas as canles. As publicacións das redes poden ser vistas, gardadas ou compartidas por outras persoas.</p>
+
                     <div class="consent-box">
-                        <p class="consent-text">Autorizo o <strong>uso desas fotografías e/ou vídeos nas redes sociais e na páxina web de MoveMentes</strong> (Instagram, Facebook, WhatsApp, www.movementes.es), con fins exclusivamente divulgativos da actividade.</p>
+                        <p class="consent-text">Autorizo a publicar fotografías e/ou vídeos nos que se poida identificar o/a meu/miña fillo/a na <strong>web www.movementes.es</strong> para informar e promocionar as actividades de MoveMentes.</p>
                         <div class="radio-row">
-                            <label class="radio-option"><input type="radio" name="consent-redes" value="Si" required> Si, autorizo</label>
-                            <label class="radio-option"><input type="radio" name="consent-redes" value="Non"> Non autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-web" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-web" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo a publicar fotografías e/ou vídeos nos que se poida identificar o/a meu/miña fillo/a en <strong>Instagram</strong> para informar e promocionar as actividades de MoveMentes.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-instagram" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-instagram" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo a publicar fotografías e/ou vídeos nos que se poida identificar o/a meu/miña fillo/a en <strong>Facebook</strong> para informar e promocionar as actividades de MoveMentes.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-facebook" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-facebook" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo a publicar fotografías e/ou vídeos nos que se poida identificar o/a meu/miña fillo/a en <strong>TikTok</strong> para informar e promocionar as actividades de MoveMentes.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-tiktok" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-tiktok" value="Non"> Non autorizo</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-box">
+                        <p class="consent-text">Autorizo a publicar fotografías e/ou vídeos nos que se poida identificar o/a meu/miña fillo/a en <strong>YouTube</strong> para informar e promocionar as actividades de MoveMentes.</p>
+                        <div class="radio-row">
+                            <label class="radio-option"><input type="radio" name="consent-youtube" value="Si" required> Si, autorizo</label>
+                            <label class="radio-option"><input type="radio" name="consent-youtube" value="Non"> Non autorizo</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="data-firma">Data</label>
-                        <input type="date" id="data-firma">
+                        <input type="date" id="data-firma" required>
                     </div>
                     <div class="form-group">
                         <label for="nome-firma">Nome completo do/a sinante, como confirmación <span class="required-mark">*</span></label>
@@ -169,11 +203,17 @@
                     </div>
 
                     <div class="form-note-box">
-                        🔒 Esta autorización pódese retirar en calquera momento, sen necesidade de xustificación, escribindo por WhatsApp ou email a MoveMentes. Os datos facilitados úsanse unicamente para a xestión interna da actividade e non se ceden a terceiros.
+                        <strong>Información sobre protección de datos</strong>
+                        <p><strong>Responsable:</strong> Ángel García Lema (MoveMentes). Contacto: <a href="mailto:info@movementes.es">info@movementes.es</a>.</p>
+                        <p><strong>Finalidades:</strong> xestionar a inscrición e a comunicación sobre a actividade; só se o autorizas, realizar imaxes e publicalas nas canles que selecciones para informar e promocionar MoveMentes. Os permisos de imaxe son voluntarios e non condicionan a participación.</p>
+                        <p><strong>Base xurídica:</strong> xestión da actividade para os datos da ficha e consentimento para a captación e publicación de imaxes. Podes retirar o consentimento en calquera momento, sen afectar ao tratamento anterior á retirada.</p>
+                        <p><strong>Destinatarios:</strong> se autorizas a publicación, as imaxes poderán ser vistas polo público e tratadas polas plataformas seleccionadas. Ao enviar a ficha por WhatsApp, os datos da mensaxe tamén serán tratados por ese servizo. As plataformas poden tratar datos fóra do Espazo Económico Europeo conforme ás súas políticas. A web non garda esta ficha.</p>
+                        <p><strong>Conservación:</strong> a ficha manterase o tempo necesario para xestionar a actividade e cumprir as obrigas aplicables. As imaxes publicadas manteranse mentres estea vixente o consentimento; se o retiras, deixaremos de usalas e solicitaremos ou realizaremos a súa retirada das canles que controlemos. As copias xa compartidas por terceiros poden seguir circulando.</p>
+                        <p><strong>Dereitos:</strong> podes solicitar acceso, rectificación, supresión, limitación, oposición ou portabilidade, cando proceda, e retirar o consentimento escribindo a <a href="mailto:info@movementes.es">info@movementes.es</a>. Tamén podes reclamar ante a <a href="https://www.aepd.es/" target="_blank" rel="noopener">AEPD</a>.</p>
                     </div>
 
                     <button type="submit" class="btn btn-whatsapp wa-submit-btn">💬 Enviar por WhatsApp a MoveMentes</button>
-                    <p class="contact-form-note" style="text-align: center; margin-top: 14px; opacity: 0.6;">Ao premer "Enviar" abrirase WhatsApp co formulario xa redactado, listo para enviar.</p>
+                    <p class="contact-form-note" style="text-align: center; margin-top: 14px; opacity: 0.7;">Ao premer «Enviar» abrirase WhatsApp cos datos da ficha e as túas respostas, para que os revises antes de envialos.</p>
                 </form>
             </div>
         </section>
@@ -207,12 +247,24 @@
                 var nomeTitor = document.getElementById('nome-titor').value.trim();
                 var telefono = document.getElementById('telefono-titor').value.trim();
                 var consentFotos = document.querySelector('input[name="consent-fotos"]:checked');
-                var consentRedes = document.querySelector('input[name="consent-redes"]:checked');
+                var channels = [
+                    ['Web', 'consent-web'],
+                    ['Instagram', 'consent-instagram'],
+                    ['Facebook', 'consent-facebook'],
+                    ['TikTok', 'consent-tiktok'],
+                    ['YouTube', 'consent-youtube']
+                ].map(function (item) {
+                    return { label: item[0], choice: document.querySelector('input[name="' + item[1] + '"]:checked') };
+                });
                 var data = document.getElementById('data-firma').value;
                 var nomeFirma = document.getElementById('nome-firma').value.trim();
 
-                if (!nomeAlumno || !actividade || !nomeTitor || !telefono || !consentFotos || !consentRedes || !nomeFirma) {
+                if (!nomeAlumno || !actividade || !nomeTitor || !telefono || !consentFotos || channels.some(function (c) { return !c.choice; }) || !data || !nomeFirma) {
                     alert('Por favor, completa todos os campos obrigatorios (*) antes de enviar.');
+                    return;
+                }
+                if (consentFotos.value === 'Non' && channels.some(function (c) { return c.choice.value === 'Si'; })) {
+                    alert('Para autorizar unha publicación cómpre autorizar tamén a realización de fotos ou vídeos. Marca «Non autorizo» nas canles ou cambia o primeiro permiso.');
                     return;
                 }
 
@@ -227,7 +279,8 @@
                     '*Teléfono:* ' + telefono,
                     '',
                     '*Autorizo fotos/vídeos durante as actividades:* ' + consentFotos.value,
-                    '*Autorizo o uso en redes sociais e web:* ' + consentRedes.value,
+                    '*Autorización de publicación por canle:*',
+                    ...channels.map(function (c) { return '· ' + c.label + ': ' + c.choice.value; }),
                     '',
                     '*Data:* ' + data,
                     '*Sinatura (nome de confirmación):* ' + nomeFirma
